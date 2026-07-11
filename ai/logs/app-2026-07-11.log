@@ -26,3 +26,65 @@
 2026-07-11 06:51:34 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
 2026-07-11 06:51:35 | ERROR    | app.api.document | Failed to process document id=1: No module named 'langchain_text_splitters'
 2026-07-11 06:51:35 | ERROR    | app.http | <<< POST /documents/process -> 500 (1385.98ms) ERROR: No module named 'langchain_text_splitters'
+2026-07-11 06:55:45 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:55:45 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:55:45 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:55:58 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:55:58 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:56:01 | ERROR    | app.api.document | Failed to process document id=1: 3 validation errors for Settings
+host
+  Extra inputs are not permitted [type=extra_forbidden, input_value='127.0.0.1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+port
+  Extra inputs are not permitted [type=extra_forbidden, input_value='5000', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+chroma_path
+  Extra inputs are not permitted [type=extra_forbidden, input_value='chroma_db', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+2026-07-11 06:56:01 | ERROR    | app.http | <<< POST /documents/process -> 500 (3528.61ms) ERROR: 3 validation errors for Settings
+host
+  Extra inputs are not permitted [type=extra_forbidden, input_value='127.0.0.1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+port
+  Extra inputs are not permitted [type=extra_forbidden, input_value='5000', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+chroma_path
+  Extra inputs are not permitted [type=extra_forbidden, input_value='chroma_db', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+2026-07-11 06:56:26 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:56:26 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:56:26 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:56:29 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:56:29 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:56:31 | ERROR    | app.api.document | Failed to process document id=1: Can't instantiate abstract class OllamaEmbeddingProvider without an implementation for abstract method 'embed'
+2026-07-11 06:56:31 | ERROR    | app.http | <<< POST /documents/process -> 500 (1414.49ms) ERROR: Can't instantiate abstract class OllamaEmbeddingProvider without an implementation for abstract method 'embed'
+2026-07-11 06:57:15 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:57:15 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:57:15 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:57:19 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:57:19 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:57:20 | ERROR    | app.api.document | Failed to process document id=1: "Settings" object has no field "EMBEDDING_PROVIDER"
+2026-07-11 06:57:20 | ERROR    | app.http | <<< POST /documents/process -> 500 (1385.76ms) ERROR: "Settings" object has no field "EMBEDDING_PROVIDER"
+2026-07-11 06:58:15 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:58:15 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:58:15 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:58:18 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:58:18 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:58:19 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-11 06:58:19 | ERROR    | app.api.document | Failed to process document id=1: CHROMA_PERSIST_DIRECTORY
+2026-07-11 06:58:19 | ERROR    | app.http | <<< POST /documents/process -> 500 (1081.53ms) ERROR: CHROMA_PERSIST_DIRECTORY
+2026-07-11 06:58:57 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:58:57 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:58:57 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:59:01 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:59:01 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:59:02 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-11 06:59:02 | ERROR    | app.api.document | Failed to process document id=1: CHROMA_PERSIST_DIRECTORY
+2026-07-11 06:59:02 | ERROR    | app.http | <<< POST /documents/process -> 500 (996.96ms) ERROR: CHROMA_PERSIST_DIRECTORY
+2026-07-11 06:59:31 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:59:31 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:59:31 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:59:34 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:59:34 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:59:35 | ERROR    | app.api.document | Failed to process document id=1: cannot import name 'settings' from 'chromadb.config' (C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\venv\Lib\site-packages\chromadb\config.py)
+2026-07-11 06:59:35 | ERROR    | app.http | <<< POST /documents/process -> 500 (926.25ms) ERROR: cannot import name 'settings' from 'chromadb.config' (C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\venv\Lib\site-packages\chromadb\config.py)

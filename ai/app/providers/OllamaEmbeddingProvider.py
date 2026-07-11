@@ -13,8 +13,7 @@ class OllamaEmbeddingProvider(EmbeddingProvider):
         self.model = model
         self.base_url = base_url
 
-    @abstractmethod
-    async def embed(self,texts:list[str]) -> list[list[str]]:
+    async def embed(self,text:str) -> list[float]:
         logger.debug("Requesting embedding from Ollama (model=%s)", self.model)
 
         async with httpx.AsyncClient() as client:

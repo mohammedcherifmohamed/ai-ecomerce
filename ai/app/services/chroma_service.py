@@ -1,7 +1,7 @@
 import chromadb
-from chromadb.config import Settings as ChromaSettings
+from chromadb.config import settings as Chromasettings
 from typing import List , Dict,Any
-from app.core.config import Settings
+from app.core.config import settings
 import logging
 
 logger = logging.getLogger(__name__)
@@ -9,23 +9,23 @@ logger = logging.getLogger(__name__)
 class ChromaService:
     def __init__(self):
         self.client = chromadb.PersistentClient(
-            path=Settings.CHROMA_PERSIST_DIRECTORY,
-            settings=ChromaSettings(anonymized_telemetry=False)
+            path=settings.CHROMA_PERSIST_DIRECTORY,
+            settings=Chromasettings(anonymized_telemetry=False)
         )
         
         self.collection = self.get_or_create_collection()
         
     def _get_or_create_collection(self):
         try:
-            return self.client.get_collection(Settings.CHROMA_COLLECTION_NAME)
+            return self.client.get_collection(settings.CHROMA_COLLECTION_NAME)
         except:
             return self.client.create_collection(
-                                                name=Settings.CHROMA_COLLECTION_NAME,
+                                                name=settings.CHROMA_COLLECTION_NAME,
                                                  metadata={"hnsw:space":"cosine"}
                                                  )
     def store_embeddings(self,chunks:List[str],embeddings:List[List[float]],
                          document_id:int , collection:str = None):
-        collection_name = collection or Settings.CHROMA_COLLECTION_NAME
+        collection_name = collection or settings.CHROMA_COLLECTION_NAME
         collection = self.client.get_collection(name=collection_name,metadata={"hnsw:space":"cosine"})
         
         ids =[f"{document_id}_{i}" for i in range(len(chunks))]
@@ -51,7 +51,7 @@ class ChromaService:
             
     def search(self, embedding: List[float], top_k: int = 5, collection: str = None):
  
-        collection_name = collection or Settings.CHROMA_COLLECTION_NAME
+        collection_name = collection or settings.CHROMA_COLLECTION_NAME
         collection = self.client.get_collection(collection_name)
         
         results = collection.query(
@@ -73,7 +73,7 @@ class ChromaService:
     
     def delete_by_document_id(self, document_id: int, collection: str = None):
    
-        collection_name = collection or Settings.CHROMA_COLLECTION_NAME
+        collection_name = collection or settings.CHROMA_COLLECTION_NAME
         collection = self.client.get_collection(collection_name)
         
         all_ids = collection.get()['ids']

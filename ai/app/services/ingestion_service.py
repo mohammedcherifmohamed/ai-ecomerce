@@ -3,7 +3,7 @@ from app.services.cleaner_service import TextCleanerService
 from app.services.chunk_service import ChunkService
 from app.services.embedding_service import EmbeddingService
 from app.services.chroma_service import ChromaService
-from app.core.config import settings
+from app.core.config import settings, EMBEDDING_PROVIDER
 import logging
 from typing import Dict, Any, List
 import time
@@ -16,7 +16,7 @@ class IngestionService:
         self.pdf_service = PDFService()
         self.cleaner_service = TextCleanerService()
         self.chunk_service = ChunkService()
-        self.embedding_service = EmbeddingService(provider=settings.EMBEDDING_PROVIDER)
+        self.embedding_service = EmbeddingService(provider=EMBEDDING_PROVIDER)
         self.chroma_service = ChromaService()
 
         logger.info("Ingestion service initialized.")
