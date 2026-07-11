@@ -1,0 +1,28 @@
+2026-07-11 06:28:52 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:28:52 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:28:52 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:29:05 | INFO     | app.http | >>> GET /health from 127.0.0.1
+2026-07-11 06:29:05 | INFO     | app.http | <<< GET /health -> 200 (2.58ms)
+2026-07-11 06:29:05 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:29:05 | INFO     | app.api.document | Processing document: id=123, file=test.pdf
+2026-07-11 06:29:05 | INFO     | app.api.document | Document processed successfully: id=123
+2026-07-11 06:29:05 | INFO     | app.http | <<< POST /documents/process -> 200 (3.2ms)
+2026-07-11 06:37:21 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:37:21 | INFO     | app.api.document | Processing document: id=4, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/ZcSTu6Xn5yExvZtTnTdbCD0RiIlaZOTHK3mqE6jn.pdf
+2026-07-11 06:37:21 | INFO     | app.api.document | Document processed successfully: id=4
+2026-07-11 06:37:21 | INFO     | app.http | <<< POST /documents/process -> 200 (3.53ms)
+2026-07-11 06:43:11 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:43:11 | INFO     | app.api.document | Processing document: id=5, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/TmYF1E9mMtVCEFzM1TeuTLoU1PakZfcyEu8G3TFR.pdf
+2026-07-11 06:43:11 | INFO     | app.api.document | Document processed successfully: id=5
+2026-07-11 06:43:11 | INFO     | app.http | <<< POST /documents/process -> 200 (3.57ms)
+2026-07-11 06:49:15 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:49:15 | INFO     | app.api.document | Processing document: id=6, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/JMDywUfjS4HY05OPh1rTNBoyqzR5C4JHjUPAGqhm.pdf
+2026-07-11 06:49:15 | INFO     | app.api.document | Document processed successfully: id=6
+2026-07-11 06:49:15 | INFO     | app.http | <<< POST /documents/process -> 200 (1.83ms)
+2026-07-11 06:51:23 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 06:51:23 | INFO     | app | AI Ecommerce service started
+2026-07-11 06:51:23 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 06:51:34 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 06:51:34 | INFO     | app.api.document | Processing document: id=1, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ai\pdf.pdf
+2026-07-11 06:51:35 | ERROR    | app.api.document | Failed to process document id=1: No module named 'langchain_text_splitters'
+2026-07-11 06:51:35 | ERROR    | app.http | <<< POST /documents/process -> 500 (1385.98ms) ERROR: No module named 'langchain_text_splitters'
