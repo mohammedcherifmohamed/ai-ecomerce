@@ -62,7 +62,10 @@ class IngestionService:
             chunk_texts = [chunk.text for chunk in all_chunks]
             embeddings = await self.embedding_service.embed_batch(chunk_texts)
 
-            # step 5 store embeddings
+            # step 5 delete old embeddings if exist (re-upload)
+            self.chroma_service.delete_by_document_id(document_id, collection)
+
+            # step 6 store embeddings
             logger.info("Storing embeddings in ChromaDB...")
             self.chroma_service.store_embeddings(
                 chunks=chunk_texts,

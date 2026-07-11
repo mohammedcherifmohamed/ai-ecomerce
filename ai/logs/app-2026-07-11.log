@@ -329,3 +329,433 @@ chroma_path
 2026-07-11 07:01:39 | INFO     | app.services.ingestion_service | Document 1 processed in 3.12s
 2026-07-11 07:01:39 | INFO     | app.api.document | Document processed: id=1, result={'status': 'success', 'document_id': 1, 'chunks': 5, 'elapsed_seconds': 3.12}
 2026-07-11 07:01:39 | INFO     | app.http | <<< POST /documents/process -> 200 (4424.65ms)
+2026-07-11 08:16:22 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:16:22 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:16:22 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:17:03 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:17:03 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:17:03 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:17:17 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:17:17 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:17:17 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:17:44 | INFO     | app.http | >>> GET /docs from 127.0.0.1
+2026-07-11 08:17:44 | INFO     | app.http | <<< GET /docs -> 200 (0.68ms)
+2026-07-11 08:17:44 | INFO     | app.http | >>> GET /openapi.json from 127.0.0.1
+2026-07-11 08:17:44 | INFO     | app.http | <<< GET /openapi.json -> 200 (5.32ms)
+2026-07-11 08:17:51 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:17:51 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:17:51 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:19:14 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:19:14 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:19:14 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:19:35 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:19:35 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:19:35 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:19:54 | INFO     | app.http | >>> GET /docs from 127.0.0.1
+2026-07-11 08:19:54 | INFO     | app.http | <<< GET /docs -> 200 (0.86ms)
+2026-07-11 08:19:54 | INFO     | app.http | >>> GET /openapi.json from 127.0.0.1
+2026-07-11 08:19:54 | INFO     | app.http | <<< GET /openapi.json -> 200 (7.19ms)
+2026-07-11 08:20:13 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 08:20:13 | INFO     | app.api.document | Processing document: id=7, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/2UA2PoXOY0Wj5cSHvsx0Dx64INYh7h3vJWPVHw0k.pdf
+2026-07-11 08:20:13 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-11 08:20:13 | ERROR    | app.api.document | Failed to process document id=7: Database error: error returned from database: (code: 1) no such table: tenants
+2026-07-11 08:20:13 | ERROR    | app.http | <<< POST /documents/process -> 500 (12.0ms) ERROR: Database error: error returned from database: (code: 1) no such table: tenants
+2026-07-11 08:22:04 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:22:04 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:22:04 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:22:34 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:22:34 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:22:34 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:22:39 | INFO     | root | Logging initialized -> console + logs/app-2026-07-11.log
+2026-07-11 08:22:39 | INFO     | app | AI Ecommerce service started
+2026-07-11 08:22:39 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-11 08:23:05 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 08:23:05 | INFO     | app.api.document | Processing document: id=8, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/OeVp7h8a7skqCPQtm0pvWq5IjaSVZCtOgcmhxSti.pdf
+2026-07-11 08:23:06 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-11 08:23:07 | DEBUG    | chromadb.config | Starting component System
+2026-07-11 08:23:07 | DEBUG    | chromadb.config | Starting component Posthog
+2026-07-11 08:23:07 | INFO     | app.services.ingestion_service | Ingestion service initialized.
+2026-07-11 08:23:07 | INFO     | app.services.ingestion_service | Starting document processing: document_id=8, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/OeVp7h8a7skqCPQtm0pvWq5IjaSVZCtOgcmhxSti.pdf
+2026-07-11 08:23:07 | INFO     | app.services.ingestion_service | Step 1: Extracting text from PDF...
+2026-07-11 08:23:07 | INFO     | app.services.pdf | Extracting text from PDF: C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/OeVp7h8a7skqCPQtm0pvWq5IjaSVZCtOgcmhxSti.pdf (4 pages)
+2026-07-11 08:23:07 | INFO     | app.services.pdf | Extracted 4 pages with text from C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/OeVp7h8a7skqCPQtm0pvWq5IjaSVZCtOgcmhxSti.pdf
+2026-07-11 08:23:07 | DEBUG    | app.services.cleaner | Cleaned text: 1303 -> 1290 chars
+2026-07-11 08:23:07 | DEBUG    | app.services.cleaner | Cleaned text: 821 -> 797 chars
+2026-07-11 08:23:07 | DEBUG    | app.services.cleaner | Cleaned text: 714 -> 698 chars
+2026-07-11 08:23:07 | DEBUG    | app.services.cleaner | Cleaned text: 956 -> 945 chars
+2026-07-11 08:23:07 | INFO     | app.services.ingestion_service | Cleaned 4 pages
+2026-07-11 08:23:07 | INFO     | app.services.ingestion_service | Splitting into chunks...
+2026-07-11 08:23:07 | DEBUG    | app.services.chunk | Split page 1 into 2 chunks
+2026-07-11 08:23:07 | DEBUG    | app.services.chunk | Split page 2 into 1 chunks
+2026-07-11 08:23:07 | DEBUG    | app.services.chunk | Split page 3 into 1 chunks
+2026-07-11 08:23:07 | DEBUG    | app.services.chunk | Split page 4 into 1 chunks
+2026-07-11 08:23:07 | INFO     | app.services.embedding | Embedding batch: 5 texts
+2026-07-11 08:23:07 | INFO     | app.providers.ollama | Embedding batch: 5 texts via Ollama
+2026-07-11 08:23:07 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:23:07 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:23:07 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF453230>
+2026-07-11 08:23:07 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:07 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:23:07 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:23:07 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:23:07 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:23:09 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:23:09 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:23:09 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:23:09 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF46E990>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:23:09 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:23:09 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:23:09 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:23:09 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF498410>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:23:09 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:23:09 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:23:09 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:23:09 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:23:09 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:23:09 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF413360>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:23:10 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:23:10 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:23:10 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:23:10 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF4A4D60>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:23:10 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:23:10 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:23:10 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:23:10 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:23:10 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:23:10 | INFO     | app.providers.ollama | Batch embedding complete: 5 vectors
+2026-07-11 08:23:10 | INFO     | app.services.ingestion_service | Storing embeddings in ChromaDB...
+2026-07-11 08:23:10 | INFO     | app.services.chroma_service | Stored 5 embeddings for document_id 8 in collection ecom_documents
+2026-07-11 08:23:10 | INFO     | app.services.ingestion_service | Document 8 processed in 3.67s
+2026-07-11 08:23:10 | INFO     | app.api.document | Document processed: id=8, result={'status': 'success', 'document_id': 8, 'chunks': 5, 'elapsed_seconds': 3.67}
+2026-07-11 08:23:10 | INFO     | app.http | <<< POST /documents/process -> 200 (5266.21ms)
+2026-07-11 08:28:24 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 08:28:24 | INFO     | app.api.document | Processing document: id=9, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/V1tlOeH5baNk18iqQFDSK3vEPkxEvR4hceAi0kw6.pdf
+2026-07-11 08:28:24 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-11 08:28:24 | INFO     | app.services.ingestion_service | Ingestion service initialized.
+2026-07-11 08:28:24 | INFO     | app.services.ingestion_service | Starting document processing: document_id=9, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/V1tlOeH5baNk18iqQFDSK3vEPkxEvR4hceAi0kw6.pdf
+2026-07-11 08:28:24 | INFO     | app.services.ingestion_service | Step 1: Extracting text from PDF...
+2026-07-11 08:28:24 | INFO     | app.services.pdf | Extracting text from PDF: C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/V1tlOeH5baNk18iqQFDSK3vEPkxEvR4hceAi0kw6.pdf (6 pages)
+2026-07-11 08:28:24 | INFO     | app.services.pdf | Extracted 6 pages with text from C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/V1tlOeH5baNk18iqQFDSK3vEPkxEvR4hceAi0kw6.pdf
+2026-07-11 08:28:24 | DEBUG    | app.services.cleaner | Cleaned text: 734 -> 734 chars
+2026-07-11 08:28:24 | DEBUG    | app.services.cleaner | Cleaned text: 1071 -> 1071 chars
+2026-07-11 08:28:24 | DEBUG    | app.services.cleaner | Cleaned text: 830 -> 830 chars
+2026-07-11 08:28:24 | DEBUG    | app.services.cleaner | Cleaned text: 928 -> 928 chars
+2026-07-11 08:28:24 | DEBUG    | app.services.cleaner | Cleaned text: 1436 -> 1436 chars
+2026-07-11 08:28:24 | DEBUG    | app.services.cleaner | Cleaned text: 664 -> 664 chars
+2026-07-11 08:28:24 | INFO     | app.services.ingestion_service | Cleaned 6 pages
+2026-07-11 08:28:24 | INFO     | app.services.ingestion_service | Splitting into chunks...
+2026-07-11 08:28:24 | DEBUG    | app.services.chunk | Split page 1 into 1 chunks
+2026-07-11 08:28:24 | DEBUG    | app.services.chunk | Split page 2 into 2 chunks
+2026-07-11 08:28:24 | DEBUG    | app.services.chunk | Split page 3 into 1 chunks
+2026-07-11 08:28:24 | DEBUG    | app.services.chunk | Split page 4 into 1 chunks
+2026-07-11 08:28:24 | DEBUG    | app.services.chunk | Split page 5 into 2 chunks
+2026-07-11 08:28:24 | DEBUG    | app.services.chunk | Split page 6 into 1 chunks
+2026-07-11 08:28:24 | INFO     | app.services.embedding | Embedding batch: 8 texts
+2026-07-11 08:28:24 | INFO     | app.providers.ollama | Embedding batch: 8 texts via Ollama
+2026-07-11 08:28:24 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:24 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:24 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF4B0050>
+2026-07-11 08:28:24 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:24 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:24 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:24 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:24 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:25 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:25 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:25 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:25 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:25 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:25 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:25 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:25 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:25 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:25 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:25 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:25 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF48E250>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:26 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:26 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:26 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:26 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF48F9B0>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:26 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:26 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:26 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:26 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:26 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:26 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:27 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:27 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF4C1250>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:27 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:27 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:27 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:27 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:27 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:27 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:27 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:27 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF423E50>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:27 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:28 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:28 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:28 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:28 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF445D60>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:28 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:28 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:28 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:28 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:28 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF49D130>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:28 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:29 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:29 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:29 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:29 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:29 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:29 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:28:29 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:28:29 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF4AF230>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:28:29 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:28:29 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:28:29 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:28:29 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:28:29 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:28:29 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:28:29 | INFO     | app.providers.ollama | Batch embedding complete: 8 vectors
+2026-07-11 08:28:29 | INFO     | app.services.ingestion_service | Storing embeddings in ChromaDB...
+2026-07-11 08:28:29 | INFO     | app.services.chroma_service | Stored 8 embeddings for document_id 9 in collection ecom_documents
+2026-07-11 08:28:29 | INFO     | app.services.ingestion_service | Document 9 processed in 5.77s
+2026-07-11 08:28:29 | INFO     | app.api.document | Document processed: id=9, result={'status': 'success', 'document_id': 9, 'chunks': 8, 'elapsed_seconds': 5.77}
+2026-07-11 08:28:29 | INFO     | app.http | <<< POST /documents/process -> 200 (5779.33ms)
+2026-07-11 08:29:48 | INFO     | app.http | >>> POST /documents/process from 127.0.0.1
+2026-07-11 08:29:48 | INFO     | app.api.document | Processing document: id=10, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/ZG2KSwsA3AcZPX1cgFcg34CabB0GOslZkOgmSlgR.pdf
+2026-07-11 08:29:48 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-11 08:29:48 | INFO     | app.services.ingestion_service | Ingestion service initialized.
+2026-07-11 08:29:48 | INFO     | app.services.ingestion_service | Starting document processing: document_id=10, file=C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/ZG2KSwsA3AcZPX1cgFcg34CabB0GOslZkOgmSlgR.pdf
+2026-07-11 08:29:48 | INFO     | app.services.ingestion_service | Step 1: Extracting text from PDF...
+2026-07-11 08:29:48 | INFO     | app.services.pdf | Extracting text from PDF: C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/ZG2KSwsA3AcZPX1cgFcg34CabB0GOslZkOgmSlgR.pdf (4 pages)
+2026-07-11 08:29:48 | INFO     | app.services.pdf | Extracted 4 pages with text from C:\Users\tmi\Desktop\sumer_2026\Ai\ecom\ecom\storage\app/public\documents/ZG2KSwsA3AcZPX1cgFcg34CabB0GOslZkOgmSlgR.pdf
+2026-07-11 08:29:48 | DEBUG    | app.services.cleaner | Cleaned text: 1303 -> 1290 chars
+2026-07-11 08:29:48 | DEBUG    | app.services.cleaner | Cleaned text: 821 -> 797 chars
+2026-07-11 08:29:48 | DEBUG    | app.services.cleaner | Cleaned text: 714 -> 698 chars
+2026-07-11 08:29:48 | DEBUG    | app.services.cleaner | Cleaned text: 956 -> 945 chars
+2026-07-11 08:29:48 | INFO     | app.services.ingestion_service | Cleaned 4 pages
+2026-07-11 08:29:48 | INFO     | app.services.ingestion_service | Splitting into chunks...
+2026-07-11 08:29:48 | DEBUG    | app.services.chunk | Split page 1 into 2 chunks
+2026-07-11 08:29:48 | DEBUG    | app.services.chunk | Split page 2 into 1 chunks
+2026-07-11 08:29:48 | DEBUG    | app.services.chunk | Split page 3 into 1 chunks
+2026-07-11 08:29:48 | DEBUG    | app.services.chunk | Split page 4 into 1 chunks
+2026-07-11 08:29:48 | INFO     | app.services.embedding | Embedding batch: 5 texts
+2026-07-11 08:29:48 | INFO     | app.providers.ollama | Embedding batch: 5 texts via Ollama
+2026-07-11 08:29:48 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:29:48 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:29:48 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF4AC670>
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:29:48 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:29:48 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:29:48 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:29:48 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:29:48 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:29:48 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:29:48 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:29:48 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF4A06D0>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:29:49 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:29:49 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:29:49 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:29:49 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DFF48A510>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:29:49 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:29:49 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:29:49 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:29:49 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:29:49 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:29:49 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DFF48B350>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:29:50 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:29:50 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:29:50 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:29:50 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000015DEF486830>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sat, 11 Jul 2026 07:29:50 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-11 08:29:50 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-11 08:29:50 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-11 08:29:50 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | close.started
+2026-07-11 08:29:50 | DEBUG    | httpcore.connection | close.complete
+2026-07-11 08:29:50 | INFO     | app.providers.ollama | Batch embedding complete: 5 vectors
+2026-07-11 08:29:50 | INFO     | app.services.ingestion_service | Storing embeddings in ChromaDB...
+2026-07-11 08:29:50 | INFO     | app.services.chroma_service | Stored 5 embeddings for document_id 10 in collection ecom_documents
+2026-07-11 08:29:50 | INFO     | app.services.ingestion_service | Document 10 processed in 2.38s
+2026-07-11 08:29:50 | INFO     | app.api.document | Document processed: id=10, result={'status': 'success', 'document_id': 10, 'chunks': 5, 'elapsed_seconds': 2.38}
+2026-07-11 08:29:50 | INFO     | app.http | <<< POST /documents/process -> 200 (2392.59ms)
