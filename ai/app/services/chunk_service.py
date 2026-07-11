@@ -1,6 +1,6 @@
 import logging
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from app.models.chunk import chunk
+from app.models.chunk import Chunk
 
 logger = logging.getLogger("app.services.chunk")
 
@@ -41,7 +41,7 @@ class ChunkService:
 
         for index, piece in enumerate(pieces):
             chunks.append(
-                chunk(
+                Chunk(
                     document_id=document_id,
                     page=page,
                     chunk_index=index,

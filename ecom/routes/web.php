@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Admin\EmployeeController as AdminEmployeeController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\AiChatController;
 use App\Http\Controllers\AuthWebController;
 use App\Http\Controllers\CategoryWebController;
 use App\Http\Controllers\CheckoutController;
@@ -73,3 +74,5 @@ Route::middleware('auth')->group(function () {
         Route::get('customers', [EmployeeCustomerController::class, 'index'])->name('customers.index');
     });
 });
+
+Route::post('/chat', [AiChatController::class, 'ask'])->name('chat.ask');

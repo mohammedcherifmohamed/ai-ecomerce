@@ -1,9 +1,9 @@
 ✅ PDFService          ← done
 ✅ TextCleanerService  ← done 
 ✅ ChunkService        ← done 
-⬜ EmbeddingService    ←
-⬜ ChromaService
-⬜ DocumentProcessor
-⬜ FastAPI endpoint
-⬜ Laravel integration
-⬜ RAG chat endpoint
+⬜ EmbeddingService    ← done
+⬜ ChromaService       ← done
+⬜ DocumentProcessor   ← done
+⬜ FastAPI endpoint    ← done
+⬜ Laravel integration ← done
+⬜ RAG chat endpoint   ←

@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     
     OLLAMA_HOST: str = "http://localhost:11434"
     EMBEDDING_MODEL: str = "nomic-embed-text"
-    LLM_MODEL : str = "llama3.2"
+    LLM_MODEL : str = "mistral"
     
     CHROMA_PERSIST_DIRECTORY: str = "./chroma_db"
     CHROMA_COLLECTION_NAME: str = "ecom_documents"

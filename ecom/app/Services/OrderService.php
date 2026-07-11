@@ -97,7 +97,7 @@ class OrderService
                 $order->id,
                 OrderStatus::Pending->value,
                 'Order placed',
-                $data['customer_id'] ?? null
+                null
             );
 
             return $order->fresh(['customer.user', 'items.product', 'statusHistory']);

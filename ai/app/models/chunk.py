@@ -1,10 +1,10 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass(slots=True)
-
-class chunk:
-    document_id:int
-    page:int
-    chunk_index:int
-    text:str
+class Chunk:
+    document_id: int
+    page: int
+    chunk_index: int
+    text: str
+    similarity: float = 0.0
     
