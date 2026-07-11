@@ -1,5 +1,5 @@
 import chromadb
-from chromadb.config import settings as Chromasettings
+from chromadb.config import Settings as ChromaSettings
 from typing import List , Dict,Any
 from app.core.config import settings
 import logging
@@ -10,12 +10,12 @@ class ChromaService:
     def __init__(self):
         self.client = chromadb.PersistentClient(
             path=settings.CHROMA_PERSIST_DIRECTORY,
-            settings=Chromasettings(anonymized_telemetry=False)
+            settings=ChromaSettings(anonymized_telemetry=False)
         )
         
         self.collection = self.get_or_create_collection()
         
-    def _get_or_create_collection(self):
+    def get_or_create_collection(self):
         try:
             return self.client.get_collection(settings.CHROMA_COLLECTION_NAME)
         except:
@@ -26,7 +26,7 @@ class ChromaService:
     def store_embeddings(self,chunks:List[str],embeddings:List[List[float]],
                          document_id:int , collection:str = None):
         collection_name = collection or settings.CHROMA_COLLECTION_NAME
-        collection = self.client.get_collection(name=collection_name,metadata={"hnsw:space":"cosine"})
+        collection = self.client.get_collection(name=collection_name)
         
         ids =[f"{document_id}_{i}" for i in range(len(chunks))]
         

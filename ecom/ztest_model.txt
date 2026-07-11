@@ -1,0 +1,119 @@
+Test 1
+
+Question
+
+What is the company's mission?
+
+Expected Answer
+
+The company's mission is to provide high-quality products supported by exceptional customer service while maintaining integrity, transparency, and continuous improvement. It also aims to build long-term customer relationships through reliable products, efficient order management, responsive support, and clear communication.
+
+Test 2
+
+Question
+
+Can product prices change after they are published?
+
+Expected Answer
+
+Yes. Prices may change due to supplier price adjustments, seasonal promotions, inventory fluctuations, operational costs, market conditions, or pricing corrections. However, confirmed orders are not affected by later price changes.
+
+Test 3
+
+Question
+
+What are the stages of order processing?
+
+Expected Answer
+
+The order processing workflow includes:
+
+Order Received
+Order Confirmed
+Payment Verification
+Inventory Verification
+Order Processing
+Packaging
+Shipping Preparation
+Shipment
+Delivery
+Order Completion
+Test 4
+
+Question
+
+What should I do if my package arrives damaged?
+
+Expected Answer
+
+Customers should inspect the package, photograph any visible damage, report the issue immediately, retain the original packaging, and contact customer support so the issue can be investigated.
+
+Test 5
+
+Question
+
+What information am I responsible for providing?
+
+Expected Answer
+
+Customers are responsible for providing accurate information, including their full name, delivery address, contact information, and order details.
+
+Test 6
+
+Question
+
+What conditions must a product meet to be eligible for return?
+
+Expected Answer
+
+Products should generally be unused, undamaged, complete, and returned in their original packaging whenever possible. Some products may not be eligible for return due to hygiene, customization, or legal restrictions.
+
+Test 7
+
+Question
+
+How are refunds processed?
+
+Expected Answer
+
+Refund requests are reviewed after the returned product has been inspected. If approved, the refund is processed using the original payment method whenever possible. Processing times may vary depending on banking institutions and payment providers.
+
+Test 8
+
+Question
+
+What is not covered by the warranty?
+
+Expected Answer
+
+The warranty generally does not cover accidental damage, misuse, unauthorized repairs, normal wear, modifications, or improper installation.
+
+Test 9
+
+Question
+
+What services does customer support provide?
+
+Expected Answer
+
+Customer support assists with product information, order status, returns, refunds, warranty questions, technical guidance, account inquiries, and delivery issues.
+
+Test 10
+
+Question
+
+What customer information does the company collect?
+
+Expected Answer
+
+The company may collect account details, contact information, purchase history, order information, and communication history for legitimate business purposes.
+
+Test 11
+
+Question
+
+How does the company protect customer information?
+
+Expected Answer
+
+The company implements reasonable security measures to protect customer information from unauthorized access and handles personal information according to applicable privacy regulations.
