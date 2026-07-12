@@ -4,6 +4,9 @@ from app.providers.OllamaEmbeddingProvider import OllamaEmbeddingProvider
 
 
 class Settings(BaseSettings):
+    AI_API_KEY: str
+    LARAVEL_API_URL:str="http://127.0.0.1:8000/api"
+    
     APP_NAME: str = "ECOM AI SERVICE"
     APP_ENV:  str = "development"
     DEBUG:bool = True
