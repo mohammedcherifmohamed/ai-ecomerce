@@ -76,3 +76,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/chat', [AiChatController::class, 'ask'])->name('chat.ask');
+
+

@@ -8,6 +8,7 @@ use App\Repositories\Interfaces\OrderRepositoryInterface;
 use App\Repositories\Interfaces\ProductRepositoryInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class OrderService
 {
@@ -159,4 +160,24 @@ class OrderService
     {
         return $this->orderRepository->getMonthlyOrders($months);
     }
+
+    public function getOrderStatusForAI($customerId,$orderId){
+        // find order
+        $order = $this->orderRepository->findCustomerOrder($customerId,$orderId);
+        if(!$order){
+            throw new ModelNotFoundException(
+                'order not found or does not belongs to this customer.'
+            );
+        }
+
+        return [
+            'success' => true ,
+            'order' => [
+                'id' => $order->id ,
+                'status' => $order->status ,
+            ],
+        ];
+
+    }
+
 }

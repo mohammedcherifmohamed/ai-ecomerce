@@ -4,6 +4,7 @@ namespace App\Repositories\Interfaces;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
+use App\Models\Order;
 
 interface OrderRepositoryInterface
 {
@@ -34,4 +35,6 @@ interface OrderRepositoryInterface
     public function getRecentOrders(int $limit = 10): Collection;
 
     public function getMonthlyOrders(int $months = 12): Collection;
+
+    public function findCustomerOrder(int $customerId , int $orderId): ?Order ;
 }

@@ -149,4 +149,13 @@ class OrderRepository implements OrderRepositoryInterface
             ->orderBy('month')
             ->get();
     }
+
+    public function findCustomerOrder(int $customerId, int $orderId): ?Order{
+        return Order::query()
+            ->where('id',$orderId)
+            ->where('customer_id',$customerId)
+            ->first();
+
+    }
+
 }
