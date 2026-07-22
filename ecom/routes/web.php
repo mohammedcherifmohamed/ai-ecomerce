@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AiChatController as AdminAiChatController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
@@ -61,6 +62,9 @@ Route::middleware('auth')->group(function () {
         Route::post('documents', [AdminDocumentController::class, 'store'])->name('documents.store');
         Route::get('documents/{id}/download', [AdminDocumentController::class, 'download'])->name('documents.download');
         Route::delete('documents/{id}', [AdminDocumentController::class, 'destroy'])->name('documents.destroy');
+        Route::get('ai/chat', [AdminAiChatController::class, 'index'])->name('ai.chat');
+        Route::post('ai/chat', [AdminAiChatController::class, 'ask'])->name('ai.chat.ask');
+        Route::get('ai/chat/result/{requestId}', [AdminAiChatController::class, 'result'])->name('ai.chat.result');
     });
 
     Route::middleware('role:administrator,employee')->prefix('employee')->name('employee.')->group(function () {
@@ -76,5 +80,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/chat', [AiChatController::class, 'ask'])->name('chat.ask');
+Route::get('/chat/result/{requestId}', [AiChatController::class, 'result'])->name('chat.result');
 
 

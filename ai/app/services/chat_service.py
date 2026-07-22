@@ -1,7 +1,11 @@
+import asyncio
 import json
 import logging
 import time
 
+import httpx
+
+from app.core.config import settings
 from app.schemas.chat_schema import (
     ChatRequest,
     ChatResponse,
@@ -9,6 +13,7 @@ from app.schemas.chat_schema import (
 )
 
 from app.services.RetrievalService import RetrievalService
+from app.services.async_result_store import result_store
 from app.services.prompt_builder import PromptBuilder
 from app.services.tool_executor import ToolExecutor
 from app.providers.ollama_llm_provider import LLMProvider
@@ -129,3 +134,58 @@ class ChatService:
             sources=sources,
             processing_time=elapsed,
         )
+
+    async def chat_async(self, request: ChatRequest) -> str:
+        """Submit for background LLM processing. When done, POSTs to callback_url."""
+        chunks = await self.retrieval_service.retrieve(
+            question=request.question,
+            collection=request.collection,
+            top_k=request.top_k,
+        )
+
+        request_id = result_store.generate_id()
+        await result_store.set_pending(request_id)
+
+        asyncio.create_task(self._process_async(request_id, request, chunks))
+        logger.info("ChatService spawned background task: %s", request_id)
+        return request_id
+
+    async def _process_async(self, request_id: str, request: ChatRequest, chunks: list) -> None:
+        try:
+            final_prompt = PromptBuilder.build(
+                question=request.question,
+                chunks=chunks,
+                tool_result=request.tool_result,
+                customer_id=request.customer_id,
+            )
+            final_answer = await self.llm_provider.generate(prompt=final_prompt)
+            payload = {"success": True, "answer": final_answer}
+
+            await result_store.set_result(request_id, payload)
+            logger.info("ChatService async result ready: %s", request_id)
+
+            if request.callback_url:
+                await self._send_callback(request.callback_url, request_id, payload)
+
+        except Exception as e:
+            logger.error("ChatService async processing failed: %s", str(e))
+            error_payload = {"success": False, "error": str(e)}
+            await result_store.set_error(request_id, str(e))
+            if request.callback_url:
+                await self._send_callback(request.callback_url, request_id, error_payload)
+
+    async def _send_callback(self, url: str, request_id: str, payload: dict) -> None:
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    url,
+                    json={"request_id": request_id, **payload},
+                    headers={
+                        "Accept": "application/json",
+                        "Authorization": f"Bearer {settings.AI_API_KEY}",
+                    },
+                    timeout=30,
+                )
+                logger.info("Callback sent to %s — status %s", url, response.status_code)
+        except Exception as e:
+            logger.error("Callback to %s failed: %s", url, str(e))

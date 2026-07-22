@@ -60,5 +60,47 @@ class ToolExecutor:
         if category:
             data["category"] = category
         return await self._post("/ai/inquiry/create", data)
+
+    async def search_inquiries(self, keyword: str | None = None, category: str | None = None, date_from: str | None = None, date_to: str | None = None, limit: int | None = None) -> dict:
+        data = {}
+        if keyword:
+            data["keyword"] = keyword
+        if category:
+            data["category"] = category
+        if date_from:
+            data["date_from"] = date_from
+        if date_to:
+            data["date_to"] = date_to
+        if limit:
+            data["limit"] = limit
+        return await self._post("/ai/inquiries/search", data)
+
+    async def customer_summary(self, customer_id: int | None = None, email: str | None = None) -> dict:
+        data = {}
+        if customer_id:
+            data["customer_id"] = customer_id
+        if email:
+            data["email"] = email
+        return await self._post("/ai/customers/summary", data)
+
+    async def trends_statistics(self, period: str | None = None, date_from: str | None = None, date_to: str | None = None) -> dict:
+        data = {}
+        if period:
+            data["period"] = period
+        if date_from:
+            data["date_from"] = date_from
+        if date_to:
+            data["date_to"] = date_to
+        return await self._post("/ai/orders/trends", data)
+
+    async def ticket_analysis(self, date_from: str | None = None, date_to: str | None = None, category: str | None = None) -> dict:
+        data = {}
+        if date_from:
+            data["date_from"] = date_from
+        if date_to:
+            data["date_to"] = date_to
+        if category:
+            data["category"] = category
+        return await self._post("/ai/tickets/analysis", data)
     
     

@@ -279,11 +279,15 @@
                 });
 
                 const data = await res.json();
-                loadingEl.remove();
 
-                if (data.answer) {
+                if (data.request_id) {
+                    loadingEl.querySelector('.ai-chat-msg-text').textContent = 'AI is thinking...';
+                    pollForResult(data.request_id, loadingEl);
+                } else if (data.answer) {
+                    loadingEl.remove();
                     appendMessage(data.answer, 'bot');
                 } else {
+                    loadingEl.remove();
                     appendMessage('Sorry, something went wrong.', 'bot');
                 }
             } catch (err) {
@@ -294,6 +298,31 @@
             sendBtn.disabled = false;
             input.focus();
         });
+
+        async function pollForResult(requestId, loadingEl) {
+            const maxAttempts = 150;
+            const intervalMs = 2000;
+
+            for (let i = 0; i < maxAttempts; i++) {
+                await new Promise(r => setTimeout(r, intervalMs));
+
+                try {
+                    const res = await fetch('{{ url("chat/result") }}/' + requestId);
+                    const data = await res.json();
+
+                    if (data.status === 'completed') {
+                        loadingEl.remove();
+                        appendMessage(data.answer || 'Sorry, something went wrong.', 'bot');
+                        return;
+                    }
+                } catch (err) {
+                    console.warn('Poll attempt ' + i + ' failed', err);
+                }
+            }
+
+            loadingEl.remove();
+            appendMessage('Request timed out. Please try again.', 'bot');
+        }
 
         function appendMessage(text, type) {
             const div = document.createElement('div');

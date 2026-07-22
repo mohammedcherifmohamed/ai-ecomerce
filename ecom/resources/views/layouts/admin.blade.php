@@ -37,6 +37,7 @@
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('admin.customers.*') ? 'active' : '' }}" href="{{ route('admin.customers.index') }}"><i class="bi bi-people"></i> Customers</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('admin.employees.*') ? 'active' : '' }}" href="{{ route('admin.employees.index') }}"><i class="bi bi-person-badge"></i> Employees</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('admin.documents.*') ? 'active' : '' }}" href="{{ route('admin.documents.index') }}"><i class="bi bi-file-earmark"></i> Documents</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('admin.ai.chat*') ? 'active' : '' }}" href="{{ route('admin.ai.chat') }}"><i class="bi bi-robot"></i> AI Chat</a></li>
                     <li class="nav-item mt-3"><hr class="text-secondary mx-3"></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><i class="bi bi-arrow-left"></i> Back to Store</a></li>
                     <li class="nav-item">

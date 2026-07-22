@@ -36,6 +36,11 @@ class ChatRequest(BaseModel):
         default=None,
         description="Pre-executed tool result. When provided, AI uses this to generate final answer."
     )
+
+    callback_url: Optional[str] = Field(
+        default=None,
+        description="URL for webhook callback when async processing completes."
+    )
     
     
 class SourceDocument(BaseModel):
