@@ -15,6 +15,12 @@ TOOLS_JSON = json.dumps([
         "description": "Cancel a customer's order by order ID. Only orders with status pending or processing can be cancelled. Restocks inventory automatically.",
         "parameters": {"customer_id": "int (required)", "order_id": "int (required)"},
     },
+    {
+        "tool": "create_inquiry",
+        "description": "Create a customer inquiry or support request. Use when a customer wants to return a product, file a complaint, report an issue, ask a question, or submit any feedback.",
+        "parameters": {"inquiry": "string (required, min 7 chars)", "category": "string (optional, e.g. returns, complaint, question, general)"},
+    }
+    
 ], indent=2)
 
 AUTH_PROMPT_TEMPLATE = """
@@ -29,16 +35,19 @@ Available tools (JSON):
 
 CRITICAL RULES FOR TOOL CALLS:
 
-1. The ONLY valid TOOL_CALL format is JSON:
-   TOOL_CALL:{{"tool":"tool_name","customer_id":INTEGER,"order_id":INTEGER}}
+1. To call a tool, output ONLY this EXACT line (no other text):
+   TOOL_CALL:{{"tool":"TOOL_NAME","PARAM1":VALUE1,"PARAM2":VALUE2,...}}
 
-2. **Customer ID**: Use the EXACT number from "USER INFORMATION" below.
+   Examples for each tool:
+   TOOL_CALL:{{"tool":"get_order_status","customer_id":INTEGER,"order_id":INTEGER}}
+   TOOL_CALL:{{"tool":"cancel_order","customer_id":INTEGER,"order_id":INTEGER}}
+   TOOL_CALL:{{"tool":"create_inquiry","inquiry":"your text here","category":"optional category"}}
 
-3. **Order ID**: The user MUST explicitly say their order number.
-   If missing, ask: "What is your order number?"
+2. **Customer ID**: When a tool requires customer_id, use the EXACT number from "USER INFORMATION" below. Do NOT include customer_id in create_inquiry.
+
+3. **Order ID**: For get_order_status and cancel_order, the user MUST explicitly say their order number. If missing, ask: "What is your order number?"
 
 4. When you call a tool, your ENTIRE response must be ONLY the TOOL_CALL line.
-   Do NOT add any other text before or after it.
 
 5. Never invent information. If documentation is insufficient, say so.
 

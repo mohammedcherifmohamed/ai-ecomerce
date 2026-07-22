@@ -55,10 +55,10 @@ class ToolExecutor:
             "order_id": order_id,
         })
 
-
-async def create_inquiry(self,problem):
-    return await self._post("/ai/oredrs/inquiry",{
-        "problem":problem,
-    })
+    async def create_inquiry(self, inquiry: str, category: str | None = None) -> dict:
+        data = {"inquiry": inquiry}
+        if category:
+            data["category"] = category
+        return await self._post("/ai/inquiry/create", data)
     
     

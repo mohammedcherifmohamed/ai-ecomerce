@@ -72,30 +72,41 @@ class AiChatService
                 }
 
                 // Parse TOOL_CALL:{"tool":"name",...}
-                $toolCallStr = str_replace('TOOL_CALL:', '', $toolCallLine);
+                $toolCallPos = strpos($toolCallLine, 'TOOL_CALL:');
+                $toolCallStr = $toolCallPos !== false
+                    ? substr($toolCallLine, $toolCallPos + 10)
+                    : $toolCallLine;
                 $toolCall = json_decode($toolCallStr, true);
-                $toolName = $toolCall['tool'];
 
-                // Execute the tool locally (no HTTP call)
-                if ($toolName === 'get_order_status') {
-                    $toolCustomerId = (int) $toolCall['customer_id'];
-                    $toolOrderId = (int) $toolCall['order_id'];
-                    $toolResult = $this->orderService->getOrderStatusForAI($toolCustomerId, $toolOrderId);
-                } elseif ($toolName === 'cancel_order') {
-                    $toolCustomerId = (int) $toolCall['customer_id'];
-                    $toolOrderId = (int) $toolCall['order_id'];
-                    $toolResult = $this->orderService->cancelOrderForAI($toolCustomerId, $toolOrderId);
-                } elseif ($toolName === 'create_inquiry') {
-                    $inquiry = $this->inquiryService->create(
-                        inquiry: $toolCall['inquiry'],
-                        category: $toolCall['category'] ?? null,
-                    );
-                    $toolResult = [
-                        'success' => true,
-                        'inquiry_id' => $inquiry->id,
-                    ];
+                if (!is_array($toolCall) || !isset($toolCall['tool'])) {
+                    Log::error('Invalid TOOL_CALL JSON', ['line' => $toolCallLine, 'parsed' => $toolCall]);
+                    $toolResult = ['success' => false, 'error' => 'Invalid tool call format'];
                 } else {
-                    $toolResult = ['success' => false, 'error' => "Unknown tool: {$toolName}"];
+                    $toolName = $toolCall['tool'];
+
+                    if ($toolName === 'get_order_status') {
+                        $toolCustomerId = isset($toolCall['customer_id']) ? (int) $toolCall['customer_id'] : null;
+                        $toolOrderId = isset($toolCall['order_id']) ? (int) $toolCall['order_id'] : null;
+                        $toolResult = (!$toolCustomerId || !$toolOrderId)
+                            ? ['success' => false, 'error' => 'Missing customer_id or order_id for get_order_status']
+                            : $this->orderService->getOrderStatusForAI($toolCustomerId, $toolOrderId);
+                    } elseif ($toolName === 'cancel_order') {
+                        $toolCustomerId = isset($toolCall['customer_id']) ? (int) $toolCall['customer_id'] : null;
+                        $toolOrderId = isset($toolCall['order_id']) ? (int) $toolCall['order_id'] : null;
+                        $toolResult = (!$toolCustomerId || !$toolOrderId)
+                            ? ['success' => false, 'error' => 'Missing customer_id or order_id for cancel_order']
+                            : $this->orderService->cancelOrderForAI($toolCustomerId, $toolOrderId);
+                    } elseif ($toolName === 'create_inquiry') {
+                        $inquiryText = $toolCall['inquiry'] ?? null;
+                        $toolResult = !$inquiryText
+                            ? ['success' => false, 'error' => 'Missing inquiry text for create_inquiry']
+                            : ['success' => true, 'inquiry_id' => $this->inquiryService->create(
+                                inquiry: $inquiryText,
+                                category: $toolCall['category'] ?? null,
+                            )->id];
+                    } else {
+                        $toolResult = ['success' => false, 'error' => "Unknown tool: {$toolName}"];
+                    }
                 }
 
                 Log::info("Tool executed locally", ['result' => $toolResult]);

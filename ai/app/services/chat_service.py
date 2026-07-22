@@ -62,20 +62,39 @@ class ChatService:
             if "TOOL_CALL:" in answer and request.execute_tools:
                 try:
                     tool_line = [line.strip() for line in answer.split("\n") if "TOOL_CALL:" in line][0]
-                    tool_call_str = tool_line.replace("TOOL_CALL:", "").strip()
+                    idx = tool_line.index("TOOL_CALL:")
+                    tool_call_str = tool_line[idx + 10:].strip()
                     tool_call = json.loads(tool_call_str)
                     tool_name = tool_call["tool"]
-                    cid = int(tool_call["customer_id"])
-                    order_id = int(tool_call["order_id"])
-
-                    print('___________ printing info : '+ tool_name, cid, order_id)
-                    logger.info("Tool detected: %s(customer=%s, order=%s)", tool_name, cid, order_id)
                     tool_used = True
+                    logger.info("Tool detected: %s %s", tool_name, tool_call)
 
                     if tool_name == "get_order_status":
-                        tool_result = await self.tool_executor.get_order_status(cid, order_id)
+                        print("---------> calling get_order_status ... with : "+ tool_call.get("order_id"))
+                        
+                        cid = tool_call.get("customer_id")
+                        order_id = tool_call.get("order_id")
+                        if not cid or not order_id:
+                            tool_result = {"success": False, "error": "Missing customer_id or order_id for get_order_status"}
+                        else:
+                            tool_result = await self.tool_executor.get_order_status(int(cid), int(order_id))
                     elif tool_name == "cancel_order":
-                        tool_result = await self.tool_executor.cancel_order(cid, order_id)
+                        print("---------> calling cancel_order ... with : "+ tool_call.get("order_id"))
+                        
+                        cid = tool_call.get("customer_id")
+                        order_id = tool_call.get("order_id")
+                        if not cid or not order_id:
+                            tool_result = {"success": False, "error": "Missing customer_id or order_id for cancel_order"}
+                        else:
+                            tool_result = await self.tool_executor.cancel_order(int(cid), int(order_id))
+                    elif tool_name == "create_inquiry":
+                        print("---------> calling create_inquiry ... with : "+ tool_call.get("inquiry"))
+                        inquiry = tool_call.get("inquiry")
+                        if not inquiry:
+                            tool_result = {"success": False, "error": "Missing inquiry text for create_inquiry"}
+                        else:
+                            category = tool_call.get("category")
+                            tool_result = await self.tool_executor.create_inquiry(inquiry, category)
                     else:
                         tool_result = {"success": False, "error": f"Unknown tool: {tool_name}"}
 
