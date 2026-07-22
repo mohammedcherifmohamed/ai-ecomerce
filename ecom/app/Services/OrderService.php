@@ -165,9 +165,14 @@ class OrderService
         // find order
         $order = $this->orderRepository->findCustomerOrder($customerId,$orderId);
         if(!$order){
-            throw new ModelNotFoundException(
-                'order not found or does not belongs to this customer.'
-            );
+            return [
+                'success' => false ,
+                'order' => [
+                    'id' => $orderId ,
+                    'status' => "not found" ,
+                ],
+        ];
+
         }
 
         return [
@@ -179,5 +184,45 @@ class OrderService
         ];
 
     }
+
+    public function cancelOrderForAI($customerId, $orderId)
+    {
+        $order = $this->orderRepository->findCustomerOrder($customerId, $orderId);
+        if (!$order) {
+            return [
+                'success' => false,
+                'order' => ['id' => $orderId, 'status' => 'not found'],
+            ];
+        }
+
+        $nonCancelable = [
+            OrderStatus::Shipped->value,
+            OrderStatus::Delivered->value,
+            OrderStatus::Cancelled->value,
+            OrderStatus::Refunded->value,
+        ];
+
+        $currentStatus = $order->status->value;
+        if (in_array($currentStatus, $nonCancelable)) {
+            return [
+                'success' => false,
+                'order' => ['id' => $order->id, 'status' => $currentStatus],
+                'error' => "Cannot cancel an order with status '{$currentStatus}'.",
+            ];
+        }
+
+        $this->cancel($orderId, 'Cancelled via AI assistant');
+        $order->refresh();
+
+        return [
+            'success' => true,
+            'order' => [
+                'id' => $order->id,
+                'status' => $order->status->value,
+            ],
+        ];
+    }
+
+
 
 }

@@ -1,0 +1,611 @@
+2026-07-14 07:58:55 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 07:58:55 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:00:40 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 08:00:40 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:00:40 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-14 08:04:32 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 08:04:32 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:04:32 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-14 08:04:50 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 08:04:50 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:04:50 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-14 08:05:00 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 08:05:00 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:05:00 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-14 08:10:39 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:10:39 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:10:39 | DEBUG    | chromadb.config | Starting component System
+2026-07-14 08:10:39 | DEBUG    | chromadb.config | Starting component Posthog
+2026-07-14 08:10:40 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:10:40 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: What is the return policy?
+2026-07-14 08:10:40 | DEBUG    | app.services.embedding | Embedding single text (26 chars)
+2026-07-14 08:10:40 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:10:40 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:10:40 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000215C5A9F230>
+2026-07-14 08:10:40 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:10:40 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:10:40 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:10:40 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:10:40 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:10:45 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:10:45 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:10:45 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:10:45 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:10:45 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:10:45 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:10:45 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:10:45 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:10:45 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000215C5A67ED0>
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:10:45 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:11:36 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:11:36 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:11:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:11:36 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:11:36 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:11:36 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:11:36 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:11:36 | INFO     | app.services.chat_service | Chat completed in 56.24 seconds (tool_used=False)
+2026-07-14 08:11:36 | INFO     | app.http | <<< POST /chat -> 200 (57056.07ms)
+2026-07-14 08:11:53 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:11:53 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:11:53 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:11:53 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: i wanna cancle my order
+2026-07-14 08:11:53 | DEBUG    | app.services.embedding | Embedding single text (23 chars)
+2026-07-14 08:11:53 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:11:53 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:11:54 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000215C5AEF4D0>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:11:54 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:11:54 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:11:54 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:11:54 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:11:54 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:11:54 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:11:54 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:11:54 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:11:54 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000215C5AB6520>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:11:54 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:12:19 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:12:19 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:12:19 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:12:19 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:12:19 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:12:19 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:12:19 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:12:19 | INFO     | app.services.chat_service | Chat completed in 25.28 seconds (tool_used=False)
+2026-07-14 08:12:19 | INFO     | app.http | <<< POST /chat -> 200 (25299.95ms)
+2026-07-14 08:15:36 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:15:36 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:15:36 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:15:36 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: check my order's status with id 4
+2026-07-14 08:15:36 | DEBUG    | app.services.embedding | Embedding single text (33 chars)
+2026-07-14 08:15:36 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:15:36 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:15:36 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000215C60283E0>
+2026-07-14 08:15:36 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:15:36 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:15:36 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:15:36 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:15:36 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:15:37 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:15:37 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:15:37 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:15:37 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:15:37 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:15:37 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:15:37 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:15:37 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:15:37 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000215C6021490>
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:15:37 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:15:50 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:15:50 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:15:50 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:15:50 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:15:50 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:15:50 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:15:50 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:15:50 | INFO     | app.services.chat_service | Chat completed in 14.06 seconds (tool_used=False)
+2026-07-14 08:15:50 | INFO     | app.http | <<< POST /chat -> 200 (14076.46ms)
+2026-07-14 08:19:34 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 08:19:34 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:19:34 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-14 08:19:49 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:19:49 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:19:49 | DEBUG    | chromadb.config | Starting component System
+2026-07-14 08:19:49 | DEBUG    | chromadb.config | Starting component Posthog
+2026-07-14 08:19:50 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:19:50 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: what is the status of order 4
+2026-07-14 08:19:50 | DEBUG    | app.services.embedding | Embedding single text (29 chars)
+2026-07-14 08:19:50 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:19:50 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:19:50 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D70FB70E0>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:19:50 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:19:50 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:19:50 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:19:50 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:19:50 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:19:50 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:19:50 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:19:50 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:19:50 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D70F73ED0>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:19:50 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:20:06 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:20:06 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:20:06 | INFO     | app.services.chat_service | Tool detected: get_order_status(customer=6, order=4)
+2026-07-14 08:20:06 | INFO     | app.services.tool_executor | Calling Laravel: get_order_status(customer=6, order=4)
+2026-07-14 08:20:06 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:20:06 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D70FFDD10>
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:20:06 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Tue, 14 Jul 2026 07:20:07 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-07-14 08:20:07 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/orders/status "HTTP/1.1 404 Not Found"
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:20:07 | ERROR    | app.services.tool_executor | Laravel API error: 404 - {
+    "message": "order not found or does not belongs to this customer.",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+    "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
+    "line": 668,
+    "trace": [
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
+            "line": 616,
+            "function": "prepareException",
+            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php",
+            "line": 51,
+            "function": "render",
+            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 182,
+            "function": "handleException",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+            "line": 50,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 137,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 821,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 800,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 764,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 753,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 200,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 180,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
+            "line": 109,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php",
+            "line": 74,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php",
+            "line": 58,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php",
+            "line": 26,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 137,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 175,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 144,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
+            "line": 1220,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\public\\index.php",
+            "line": 20,
+            "function": "handleRequest",
+            "class": "Illuminate\\Foundation\\Application",
+            "type": "->"
+        },
+        {
+            "file": "C:\\Users\\tmi\\Desktop\\sumer_2026\\Ai\\ecom\\ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php",
+            "line": 23,
+            "function": "require_once"
+        }
+    ]
+}
+2026-07-14 08:20:07 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:20:07 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:20:14 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:20:14 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:20:14 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:20:14 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:20:14 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:20:14 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:20:14 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:20:14 | INFO     | app.services.chat_service | Chat completed in 24.20 seconds (tool_used=True)
+2026-07-14 08:20:14 | INFO     | app.http | <<< POST /chat -> 200 (24490.48ms)
+2026-07-14 08:26:49 | INFO     | root | Logging initialized -> console + logs/app-2026-07-14.log
+2026-07-14 08:26:49 | INFO     | app | AI Ecommerce service started
+2026-07-14 08:26:49 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-14 08:26:54 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:26:54 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:26:54 | DEBUG    | chromadb.config | Starting component System
+2026-07-14 08:26:54 | DEBUG    | chromadb.config | Starting component Posthog
+2026-07-14 08:26:54 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:26:54 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: i need to see my order status
+2026-07-14 08:26:54 | DEBUG    | app.services.embedding | Embedding single text (29 chars)
+2026-07-14 08:26:54 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:26:54 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:26:55 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861E2F230>
+2026-07-14 08:26:55 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:26:55 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:26:55 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:26:55 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:26:55 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:26:56 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:26:56 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:26:56 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:26:56 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:26:56 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:26:56 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:26:56 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:26:56 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:26:56 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:26:56 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:26:56 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:26:56 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:26:56 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:26:57 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861DF3ED0>
+2026-07-14 08:26:57 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:26:57 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:26:57 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:26:57 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:26:57 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:27:21 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:27:21 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:27:21 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:27:21 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:27:21 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:27:21 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:27:21 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:27:21 | ERROR    | app.services.chat_service | Failed to parse TOOL_CALL from:  TOOL_CALL:get_order_status|6|<order_id> - invalid literal for int() with base 10: '<order_id>'
+2026-07-14 08:27:21 | INFO     | app.services.chat_service | Chat completed in 26.43 seconds (tool_used=False)
+2026-07-14 08:27:21 | INFO     | app.http | <<< POST /chat -> 200 (26837.77ms)
+2026-07-14 08:27:38 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:27:38 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:27:38 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:27:38 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: i need to see my order status with id 4
+2026-07-14 08:27:38 | DEBUG    | app.services.embedding | Embedding single text (39 chars)
+2026-07-14 08:27:38 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:27:38 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:27:38 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861E7F4D0>
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:27:38 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:27:38 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:27:38 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:27:38 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:27:38 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:27:38 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:27:38 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:27:38 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:27:38 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:27:39 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861E42650>
+2026-07-14 08:27:39 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:27:39 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:27:39 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:27:39 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:27:39 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:27:48 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:27:48 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:27:48 | INFO     | app.services.chat_service | Tool detected: get_order_status(customer=6, order=4)
+2026-07-14 08:27:48 | INFO     | app.services.tool_executor | Calling Laravel: get_order_status(customer=6, order=4)
+2026-07-14 08:27:48 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:27:48 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000198623C08A0>
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:27:48 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:28:18 | DEBUG    | httpcore.http11 | receive_response_headers.failed exception=ReadTimeout(TimeoutError())
+2026-07-14 08:28:18 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:28:18 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:28:18 | ERROR    | app.http | <<< POST /chat -> 500 (40943.61ms) ERROR: 
+2026-07-14 08:28:44 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-07-14 08:28:44 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-07-14 08:28:44 | INFO     | app.services.chat_service | Processing chat request
+2026-07-14 08:28:44 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: i need to see my order status with id 4
+2026-07-14 08:28:44 | DEBUG    | app.services.embedding | Embedding single text (39 chars)
+2026-07-14 08:28:44 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-07-14 08:28:44 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:28:44 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861A216D0>
+2026-07-14 08:28:44 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:28:44 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:28:44 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:28:44 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:28:44 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:28:45 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:28:45 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:28:45 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-07-14 08:28:45 | DEBUG    | httpcore.connection | close.started
+2026-07-14 08:28:45 | DEBUG    | httpcore.connection | close.complete
+2026-07-14 08:28:45 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-07-14 08:28:45 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-07-14 08:28:45 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-07-14 08:28:45 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861E46AD0>
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:28:45 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Tue, 14 Jul 2026 07:28:47 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-07-14 08:28:47 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:28:47 | INFO     | app.services.chat_service | Tool detected: get_order_status(customer=6, order=4)
+2026-07-14 08:28:47 | INFO     | app.services.tool_executor | Calling Laravel: get_order_status(customer=6, order=4)
+2026-07-14 08:28:47 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30.0 socket_options=None
+2026-07-14 08:28:47 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019861E45370>
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-07-14 08:28:47 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-07-14 08:29:17 | DEBUG    | httpcore.http11 | receive_response_headers.failed exception=ReadTimeout(TimeoutError())
+2026-07-14 08:29:17 | DEBUG    | httpcore.http11 | response_closed.started
+2026-07-14 08:29:17 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-07-14 08:29:17 | ERROR    | app.http | <<< POST /chat -> 500 (33066.43ms) ERROR: 
+2026-07-14 08:46:01 | INFO     | app.http | >>> GET / from 127.0.0.1
+2026-07-14 08:46:01 | WARNING  | app.http | <<< GET / -> 404 (1.21ms)
+2026-07-14 08:46:01 | INFO     | app.http | >>> GET /favicon.ico from 127.0.0.1
+2026-07-14 08:46:01 | WARNING  | app.http | <<< GET /favicon.ico -> 404 (0.5ms)

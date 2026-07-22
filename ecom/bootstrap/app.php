@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'role' => EnsureUserHasRole::class,
+            'auth.ai' => \App\Http\Middleware\VerifyAiApiKey::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

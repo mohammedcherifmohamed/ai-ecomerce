@@ -14,16 +14,27 @@ class AiChatController extends Controller
 
     public function ask(Request $request): JsonResponse
     {
-        $request->validate([
-            'question' => 'required|string|min:3|max:5000',
-        ]);
+        try{
 
-        $result = $this->chatService->chat(
-            question: $request->input('question'),
-            collection: $request->input('collection', 'ecom_documents'),
-            topK: $request->input('top_k', 5),
-        );
-
-        return response()->json($result);
+            $request->validate([
+                'question' => 'required|string|min:3|max:5000',
+                ]);
+                
+                $result = $this->chatService->chat(
+                    question: $request->input('question'),
+                    collection: $request->input('collection', 'ecom_documents'),
+                    topK: $request->input('top_k', 5),
+                    customerId: $request->user()?->customer?->id,
+                );
+                    
+                return response()->json($result);
+        }catch(\Exception $e){
+           $result= [
+                'success' => false,
+                'answer' => 'required|string|min:3|max:5000',
+                'sources' => [],
+            ];
+            return response()->json($result);
+        }
     }
 }

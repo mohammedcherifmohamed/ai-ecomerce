@@ -11,6 +11,8 @@ use App\Repositories\Eloquent\ProductImageRepository;
 use App\Repositories\Eloquent\ProductRepository;
 use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
+use App\Repositories\Interfaces\InquiryRepositoryInterface;
+use App\Repositories\Eloquent\InquiryRepository as EloquentInquiryRepository;
 use App\Repositories\Interfaces\CustomerRepositoryInterface;
 use App\Repositories\Interfaces\DocumentRepositoryInterface;
 use App\Repositories\Interfaces\EmployeeRepositoryInterface;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(OrderRepositoryInterface::class, OrderRepository::class);
         $this->app->bind(DocumentRepositoryInterface::class, DocumentRepository::class);
         $this->app->bind(ProductImageRepositoryInterface::class, ProductImageRepository::class);
+        $this->app->bind(InquiryRepositoryInterface::class, EloquentInquiryRepository::class);
     }
 
     public function boot(): void

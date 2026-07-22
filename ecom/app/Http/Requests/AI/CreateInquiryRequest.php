@@ -4,7 +4,7 @@ namespace App\Http\Requests\AI;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CancelOrderRequest extends FormRequest
+class CreateInquiryRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -14,8 +14,8 @@ class CancelOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'customer_id' => 'required|integer|exists:customers,id',
-            'order_id'    => 'required|integer|exists:orders,id',
+            'inquiry' => 'required|string|min:7|max:255',
+            'category' => 'nullable|string|max:100',
         ];
     }
 }

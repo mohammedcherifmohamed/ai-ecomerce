@@ -19,23 +19,32 @@ class OllamaLLMProvider(LLMProvider):
         
     async def generate(self, prompt: str, temperature: float = 0.0) -> str:
         logger.info("Generating response using model '%s'", self.model)
-        response = await self.client.post(
-            f"{self.base_url}/api/generate",
-            json={
-                "model": self.model,
-                "prompt": prompt,
-                "stream": False,
-                "options": {
-                    "temperature": temperature,
+        try:
+            response = await self.client.post(
+                f"{self.base_url}/api/generate",
+                json={
+                    "model": self.model,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "temperature": temperature,
+                    },
                 },
-            },
-        )
-        
-        response.raise_for_status()
-        
+            )
+            
+            response.raise_for_status()
+            
+        except httpx.HTTPError as e:
+
+            logger.exception(e)
+
+            raise RuntimeError(
+                "Failed to communicate with Ollama."
+            )
+            
         data = response.json()
-        
-        return data["response"]
+            
+        return data.get("response", "")
 
     async def close(self) -> None:
         await self.client.aclose()
