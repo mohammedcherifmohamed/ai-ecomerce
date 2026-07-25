@@ -29,21 +29,21 @@ jobs:
       run : npm run build
     
     - name: Synchronize Files To Server
-      uses : easigthemes/ssh-deploy@v2.1.5
+      uses : easingthemes/ssh-deploy@v2.1.5
       env: 
         SSH_PRIVATE_KEY : ${{ secrets.SSH_PRIVATE_KEY }}
         SOURCE: "."
-        REMOTE_HOSTE: ${{ secrets.VPS_HOST }}
+        REMOTE_HOST: ${{ secrets.VPS_HOST }}
         REMOTE_USER: ${{ secrets.VPS_USER }}
         TARGET: "/home/segnwyff/ecom"
       
-    - name: Run Remote/artisa, Commands
+    - name: Run Remote/artisan, Commands
       uses: appleboy/ssh-action@v0.1.6
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-            cd /var/www/html/gelennraya.com
+            cd /home/segnwyff/ecom
             php artisan migrate --force
             php artisan optimize
