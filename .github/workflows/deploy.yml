@@ -19,6 +19,7 @@ jobs:
           php-version: 8.3
 
       - name: Install Composer Dependencies
+        working-directory: ./ecom
         run: composer install --optimize-autoloader --no-dev --no-progress --no-interaction --prefer-dist
 
       - name: Install Node.js
@@ -27,13 +28,14 @@ jobs:
           node-version: "20"
 
       - name: Install NPM dependencies
+        working-directory: ./ecom
         run: npm ci && npm run build
 
       - name: Synchronize Files To Server
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SOURCE: "."
+          SOURCE: "./ecom"
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
           TARGET: "/home/segnwyff/ecom"
