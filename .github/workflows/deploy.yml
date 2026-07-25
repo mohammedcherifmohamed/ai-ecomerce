@@ -38,6 +38,7 @@ jobs:
           SOURCE: "./ecom"
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
+          port: 5804
           TARGET: "/home/segnwyff/ecom"
 
       - name: Run Remote Artisan Commands
@@ -49,7 +50,5 @@ jobs:
           port: 5804
           script: |
             cd /home/segnwyff/ecom
-            cp .env.example .env
-            php artisan key:generate --force
             php artisan migrate --force
             php artisan optimize
