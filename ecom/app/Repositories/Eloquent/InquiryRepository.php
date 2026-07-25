@@ -13,11 +13,12 @@ class InquiryRepository implements InquiryRepositoryInterface
         protected Inquiry $model,
     ) {}
 
-    public function create(string $inquiry, ?string $category = null): Inquiry
+    public function create(string $inquiry, ?string $category = null, ?int $customerId = null): Inquiry
     {
         return $this->model->create([
             'inquiry' => $inquiry,
             'category' => $category,
+            'customer_id' => $customerId,
         ]);
     }
 

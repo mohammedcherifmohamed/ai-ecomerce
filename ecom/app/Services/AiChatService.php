@@ -165,6 +165,7 @@ class AiChatService
                 : ['success' => true, 'inquiry_id' => $this->inquiryService->create(
                     inquiry: $inquiryText,
                     category: $toolCall['category'] ?? null,
+                    customerId: $toolCall['customer_id'] ?? null,
                 )->id];
         }
 

@@ -14,6 +14,7 @@ class CreateInquiryRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'customer_id' => 'nullable|integer|exists:customers,id',
             'inquiry' => 'required|string|min:7|max:255',
             'category' => 'nullable|string|max:100',
         ];

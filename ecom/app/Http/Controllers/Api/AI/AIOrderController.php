@@ -40,6 +40,7 @@ class AIOrderController extends Controller
             $this->inquiryService->create(
                 inquiry: $req->inquiry,
                 category: $req->category,
+                customerId: $req->customer_id,
             )
         );
     }

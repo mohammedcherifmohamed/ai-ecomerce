@@ -20,6 +20,8 @@ use App\Repositories\Interfaces\OrderRepositoryInterface;
 use App\Repositories\Interfaces\ProductImageRepositoryInterface;
 use App\Repositories\Interfaces\ProductRepositoryInterface;
 use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Repositories\Eloquent\ReadyEmailRepository;
+use App\Repositories\Interfaces\ReadyEmailRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(DocumentRepositoryInterface::class, DocumentRepository::class);
         $this->app->bind(ProductImageRepositoryInterface::class, ProductImageRepository::class);
         $this->app->bind(InquiryRepositoryInterface::class, EloquentInquiryRepository::class);
+        $this->app->bind(ReadyEmailRepositoryInterface::class, ReadyEmailRepository::class);
     }
 
     public function boot(): void

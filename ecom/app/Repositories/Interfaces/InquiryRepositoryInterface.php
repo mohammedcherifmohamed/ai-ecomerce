@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 interface InquiryRepositoryInterface
 {
-    public function create(string $inquiry, ?string $category = null): Inquiry;
+    public function create(string $inquiry, ?string $category = null, ?int $customerId = null): Inquiry;
 
     public function search(array $filters = [], int $perPage = 15): LengthAwarePaginator;
 

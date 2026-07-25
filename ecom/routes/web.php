@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EmployeeController as AdminEmployeeController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\AiChatController;
+use App\Http\Controllers\Admin\ReadyEmailController;
 use App\Http\Controllers\AuthWebController;
 use App\Http\Controllers\CategoryWebController;
 use App\Http\Controllers\CheckoutController;
@@ -65,6 +66,11 @@ Route::middleware('auth')->group(function () {
         Route::get('ai/chat', [AdminAiChatController::class, 'index'])->name('ai.chat');
         Route::post('ai/chat', [AdminAiChatController::class, 'ask'])->name('ai.chat.ask');
         Route::get('ai/chat/result/{requestId}', [AdminAiChatController::class, 'result'])->name('ai.chat.result');
+        Route::get('ready-emails', [ReadyEmailController::class, 'index'])->name('ready-emails.index');
+        Route::get('ready-emails/{id}/edit', [ReadyEmailController::class, 'edit'])->name('ready-emails.edit');
+        Route::put('ready-emails/{id}', [ReadyEmailController::class, 'update'])->name('ready-emails.update');
+        Route::post('ready-emails/{id}/send', [ReadyEmailController::class, 'send'])->name('ready-emails.send');
+        Route::post('ready-emails/send-bulk', [ReadyEmailController::class, 'sendBulk'])->name('ready-emails.send-bulk');
     });
 
     Route::middleware('role:administrator,employee')->prefix('employee')->name('employee.')->group(function () {

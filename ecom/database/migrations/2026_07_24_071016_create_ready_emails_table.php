@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inquiry', function (Blueprint $table) {
+        Schema::create('ready_emails', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained();
-            $table->string('category')->nullable();
-            $table->text('inquiry');
-            $table->boolean('treated')->default(false);
+            $table->foreignId("inquiry_id")->constrained("inquiry","id");
+            $table->foreignId("customer_id")->nullable()->constrained("customers","id");
+            $table->string("title");
+            $table->text("email");
+            $table->boolean("email_sent")->default(false);
+
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inquiry');
+        Schema::dropIfExists('ready_emails');
     }
 };

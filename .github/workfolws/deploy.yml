@@ -1,0 +1,49 @@
+name: Deploy Laravel App To Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+ deploy:
+  runs-on: ubuntu-latest
+
+
+  steps:
+    - name : checkout code
+      uses: actions/checkout@v3
+
+    - name: setup PHP
+      uses :shivammathur/setup-php@v2
+      with:
+        php-version: 8.3
+    - name: Install Composer Depedencies
+      run: composer install --optimize-autoloader --no-dev --no-progress --no-interaction --prefer-dist
+    - name : install node js
+      uses: actions/setup-node@v3
+      with: 
+        node-version: "20"
+      
+    - name: Install Npm dependencies
+      run : npm run build
+    
+    - name: Synchronize Files To Server
+      uses : easigthemes/ssh-deploy@v2.1.5
+      env: 
+        SSH_PRIVATE_KEY : ${{ secrets.SSH_PRIVATE_KEY }}
+        SOURCE: "."
+        REMOTE_HOSTE: ${{ secrets.VPS_HOST }}
+        REMOTE_USER: ${{ secrets.VPS_USER }}
+        TARGET: "/home/segnwyff/ecom"
+      
+    - name: Run Remote/artisa, Commands
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+            cd /var/www/html/gelennraya.com
+            php artisan migrate --force
+            php artisan optimize

@@ -13,9 +13,9 @@ class InquiryService
         protected InquiryRepositoryInterface $inquiryRepository,
     ) {}
 
-    public function create(string $inquiry, ?string $category = null): Inquiry
+    public function create(string $inquiry, ?string $category = null, ?int $customerId = null): Inquiry
     {
-        return $this->inquiryRepository->create($inquiry, $category);
+        return $this->inquiryRepository->create($inquiry, $category, $customerId);
     }
 
     public function search(array $filters = [], int $perPage = 15): LengthAwarePaginator
