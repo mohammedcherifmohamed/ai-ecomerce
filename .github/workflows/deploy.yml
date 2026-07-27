@@ -3,7 +3,7 @@ name: Deploy Laravel App To Production
 on:
   push:
     branches:
-      - main
+      - staging
 
 jobs:
   deploy:
