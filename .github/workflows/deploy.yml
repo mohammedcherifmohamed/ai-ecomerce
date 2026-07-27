@@ -1,30 +1,54 @@
-name: Laravel + Blade CI/CD
+name: Deploy Laravel App To Production
 
 on:
   push:
-    branches: ["staging"]
-  pull_request:
-    branches: ["staging"]
+    branches:
+      - main
 
 jobs:
-  laravel-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
 
-      - name: Deploy to Server
-        uses: appleboy/ssh-action@v0.1.10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          php-version: 8.3
+
+      - name: Install Composer Dependencies
+        working-directory: ./ecom
+        run: composer install --optimize-autoloader --no-dev --no-progress --no-interaction --prefer-dist
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install NPM dependencies
+        working-directory: ./ecom
+        run: npm install && npm run build
+
+      - name: Synchronize Files To Server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: "./ecom"
+          REMOTE_HOST: ${{ secrets.VPS_HOST }}
+          REMOTE_USER: ${{ secrets.VPS_USER }}
+          PORT: 5804
+          TARGET: "/home/segnwyff/ecom"
+
+      - name: Run Remote Artisan Commands
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          PORT: ${{ secrets.SSH_PORT }}
           script: |
-            /home/segnwyff/ecom  
-            git checkout .
-            git pull origin staging
-            php artisan optimize:clear
-            php artisan cache:clear
-            php artisan config:clear
-            php artisan view:clear
+            cd /home/segnwyff/ecom
+            php artisan migrate --force
+            php artisan optimize
