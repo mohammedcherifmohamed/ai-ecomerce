@@ -150,5 +150,13 @@ class AdminAgent:
                 date_to=tool_call.get("date_to"),
                 category=tool_call.get("category"),
             )
+        elif tool_name == "sql_query":
+            from app.services.sql_query_service import execute_sql_query
+
+            result = await asyncio.to_thread(
+                execute_sql_query,
+                query=tool_call.get("query"),
+            )
+            return result.model_dump()
         else:
             return {"success": False, "error": f"Unknown admin tool: {tool_name}"}

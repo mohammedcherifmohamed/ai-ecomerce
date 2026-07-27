@@ -98,6 +98,11 @@ ADMIN_TOOLS_JSON = json.dumps([
         "description": "Get a SUMMARY/OVERVIEW of all customer inquiries: total count, breakdown by category, and daily volume. Use this for general overviews like 'resume', 'summary', 'overview of issues/ inquiries/ tickets'.",
         "parameters": {"date_from": "date (optional, YYYY-MM-DD)", "date_to": "date (optional, YYYY-MM-DD)", "category": "string (optional, filter by category)"},
     },
+    {
+        "tool": "sql_query",
+        "description": "Execute a raw SQL SELECT query directly on the database. Use ONLY when the admin asks a custom data question that the other tools cannot provide — such as custom joins, aggregations, filtering, or specific data points not covered by search_inquiries, customer_summary, trends_statistics, or ticket_analysis.",
+        "parameters": {"query": "string (required, SELECT / SHOW / DESCRIBE / EXPLAIN statement only)"},
+    },
 ], indent=2)
 
 ADMIN_PROMPT_TEMPLATE = """
@@ -116,6 +121,7 @@ TOOL SELECTION GUIDE:
 - "customer_summary" → when admin asks about a specific customer's info, orders, or spending
 - "trends_statistics" → when admin asks about sales trends, revenue, order counts over time
 - "ticket_analysis" → when admin asks for a summary/overview/breakdown of all inquiries (by category, by date, totals)
+- "sql_query" → when admin asks for custom data, specific numbers, or reports that none of the above tools can provide. Use this as a last resort for bespoke database queries.
 
 For general questions like "resume", "summary", "overview of issues" → use ticket_analysis.
 For specific questions like "find inquiries about returns" → use search_inquiries.

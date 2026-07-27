@@ -22,6 +22,13 @@ class Settings(BaseSettings):
     CHUNK_OVERLAP: int = 50  
     
     DEFAULT_TOP_K: int = 5  
+    DB_HOST: str = "127.0.0.1"
+    DB_PORT: int = 3306
+    DB_DATABASE: str = "ai-e-commerce"
+    DB_USERNAME: str = "root"
+    DB_PASSWORD: str = ""
+    DB_READ_USERNAME: str = "ai_readonly"
+    DB_READ_PASSWORD: str = "aze"
     
     class Config:
         env_file = ".env"

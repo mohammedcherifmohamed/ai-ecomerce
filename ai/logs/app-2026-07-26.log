@@ -1,0 +1,19 @@
+2026-07-26 07:57:06 | INFO     | root | Logging initialized -> console + logs/app-2026-07-26.log
+2026-07-26 07:57:06 | INFO     | app | AI Ecommerce service started
+2026-07-26 07:57:14 | INFO     | root | Logging initialized -> console + logs/app-2026-07-26.log
+2026-07-26 07:57:14 | INFO     | app | AI Ecommerce service started
+2026-07-26 07:57:14 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-26 08:57:36 | INFO     | root | Logging initialized -> console + logs/app-2026-07-26.log
+2026-07-26 08:57:36 | INFO     | app | AI Ecommerce service started
+2026-07-26 08:57:36 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-07-26 08:57:36 | INFO     | app.http | >>> GET /health from 127.0.0.1
+2026-07-26 08:57:36 | INFO     | app.http | <<< GET /health -> 200 (2.12ms)
+2026-07-26 08:57:51 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-07-26 08:57:51 | INFO     | app.services.sql_query_service | SQL query executed in 16.97ms — 5 rows returned
+2026-07-26 08:57:51 | INFO     | app.http | <<< POST /sql/query -> 200 (25.78ms)
+2026-07-26 08:58:00 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-07-26 08:58:00 | WARNING  | app.services.sql_query_service | SQL query failed after 0.02ms: Statement type 'DROP' not allowed. Only: DESC, DESCRIBE, EXPLAIN, SELECT, SHOW, WITH.
+2026-07-26 08:58:00 | INFO     | app.http | <<< POST /sql/query -> 200 (1.81ms)
+2026-07-26 08:58:12 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-07-26 08:58:12 | WARNING  | app.services.sql_query_service | SQL query failed after 0.01ms: Only a single SQL statement is allowed.
+2026-07-26 08:58:12 | INFO     | app.http | <<< POST /sql/query -> 200 (1.21ms)
