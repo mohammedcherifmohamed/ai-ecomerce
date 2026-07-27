@@ -33,12 +33,12 @@ jobs:
 
       - name: Synchronize Files To Server
         uses: easingthemes/ssh-deploy@v2.1.5
-        env:
+        with:                                    # ✅ Use 'with' block
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SOURCE: "./ecom"
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
-          PORT: 5804  
+          PORT: 5804                             # ✅ Port here
           TARGET: "/home/segnwyff/ecom"
 
       - name: Run Remote Artisan Commands
@@ -47,7 +47,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 5804 
+          port: 5804                             # ✅ Lowercase 'port' for this action
           script: |
             cd /home/segnwyff/ecom
             php artisan migrate --force
