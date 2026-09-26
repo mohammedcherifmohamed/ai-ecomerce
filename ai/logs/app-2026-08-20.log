@@ -1,0 +1,690 @@
+2026-08-20 15:34:56 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 15:34:56 | INFO     | app | AI Ecommerce service started
+2026-08-20 15:35:15 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 15:35:15 | INFO     | app | AI Ecommerce service started
+2026-08-20 15:35:47 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-08-20 15:35:47 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-08-20 15:35:47 | DEBUG    | chromadb.config | Starting component System
+2026-08-20 15:35:47 | DEBUG    | chromadb.config | Starting component Posthog
+2026-08-20 15:35:48 | INFO     | app.services.chat_service | Processing chat request
+2026-08-20 15:35:48 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: hello
+2026-08-20 15:35:48 | DEBUG    | app.services.embedding | Embedding single text (5 chars)
+2026-08-20 15:35:48 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-08-20 15:35:48 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-08-20 15:35:48 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000028BADC05D30>
+2026-08-20 15:35:48 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:35:48 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:35:48 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:35:48 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:35:48 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:35:53 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:35:53 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:35:53 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-08-20 15:35:53 | DEBUG    | httpcore.connection | close.started
+2026-08-20 15:35:53 | DEBUG    | httpcore.connection | close.complete
+2026-08-20 15:35:53 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-08-20 15:35:53 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 15:35:53 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 15:35:53 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000028BADC0CE10>
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:35:53 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:36:53 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:36:53 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:36:53 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 15:36:53 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:36:53 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:36:53 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:36:53 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:36:53 | INFO     | app.services.chat_service | Chat completed in 65.33 seconds (tool_used=False)
+2026-08-20 15:36:53 | INFO     | app.http | <<< POST /chat -> 200 (66248.4ms)
+2026-08-20 15:37:09 | INFO     | app.http | >>> POST /chat from 127.0.0.1
+2026-08-20 15:37:09 | INFO     | app.services.embedding | Embedding service initialized with provider: OllamaEmbeddingProvider
+2026-08-20 15:37:09 | INFO     | app.services.chat_service | Processing chat request
+2026-08-20 15:37:09 | INFO     | app.services.RetrievalService | Searching collection 'ecom_documents' for: i need to cancle my order
+2026-08-20 15:37:09 | DEBUG    | app.services.embedding | Embedding single text (25 chars)
+2026-08-20 15:37:09 | DEBUG    | app.providers.ollama | Requesting embedding from Ollama (model=nomic-embed-text)
+2026-08-20 15:37:09 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=30.0 socket_options=None
+2026-08-20 15:37:10 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000028BADC242D0>
+2026-08-20 15:37:10 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:37:10 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:37:10 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:37:10 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:37:10 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:37:12 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:37:12 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/embeddings "HTTP/1.1 200 OK"
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:37:12 | DEBUG    | app.providers.ollama | Embedding received: 768 dimensions
+2026-08-20 15:37:12 | DEBUG    | httpcore.connection | close.started
+2026-08-20 15:37:12 | DEBUG    | httpcore.connection | close.complete
+2026-08-20 15:37:12 | INFO     | app.services.RetrievalService | Retrieved 5 chunks
+2026-08-20 15:37:12 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 15:37:12 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 15:37:12 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000028BADB536F0>
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:37:12 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:37:31 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:37:31 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:37:31 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 15:37:31 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:37:31 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:37:31 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:37:31 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:37:31 | INFO     | app.services.chat_service | Chat completed in 21.57 seconds (tool_used=False)
+2026-08-20 15:37:31 | INFO     | app.http | <<< POST /chat -> 200 (21594.15ms)
+2026-08-20 15:40:05 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 15:40:05 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 15:40:05 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 15:40:05 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 15:40:05 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000028BADC31480>
+2026-08-20 15:40:05 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:40:05 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:40:05 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:40:05 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:40:05 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:40:26 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:40:26 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:40:26 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 15:40:26 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:40:26 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:40:26 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:40:26 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:40:26 | INFO     | app.services.admin_agent | AdminAgent chat completed in 20.51 seconds (tool_used=False)
+2026-08-20 15:40:26 | INFO     | app.http | <<< POST /chat/admin -> 200 (20524.21ms)
+2026-08-20 15:52:08 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 15:52:08 | INFO     | app | AI Ecommerce service started
+2026-08-20 15:52:08 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-08-20 15:52:09 | INFO     | app.http | >>> GET /health from 127.0.0.1
+2026-08-20 15:52:09 | INFO     | app.http | <<< GET /health -> 200 (1.93ms)
+2026-08-20 15:52:54 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 15:52:54 | INFO     | app.services.sql_query_service | SQL query executed in 109.18ms — 1 rows returned
+2026-08-20 15:52:54 | INFO     | app.http | <<< POST /sql/query -> 200 (117.16ms)
+2026-08-20 15:53:24 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 15:53:24 | INFO     | app.services.sql_query_service | SQL query executed in 1.64ms — 1 rows returned
+2026-08-20 15:53:24 | INFO     | app.http | <<< POST /sql/query -> 200 (2.87ms)
+2026-08-20 15:53:54 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 15:53:54 | INFO     | app | AI Ecommerce service started
+2026-08-20 15:54:02 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 15:54:02 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 15:54:02 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 15:54:02 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 15:54:02 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000219C17B0830>
+2026-08-20 15:54:02 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:54:02 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:54:02 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:54:02 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:54:02 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:54:37 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:54:37 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:54:37 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 15:54:37 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:54:37 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:54:37 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:54:37 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:54:37 | INFO     | app.services.admin_agent | AdminAgent chat completed in 35.24 seconds (tool_used=False)
+2026-08-20 15:54:37 | INFO     | app.http | <<< POST /chat/admin -> 200 (35256.11ms)
+2026-08-20 15:55:03 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 15:55:03 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 15:55:03 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 15:55:03 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 15:55:03 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000219C17C2990>
+2026-08-20 15:55:03 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 15:55:03 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 15:55:03 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 15:55:03 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 15:55:03 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 15:55:06 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 14:55:06 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 15:55:06 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 15:55:06 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 15:55:06 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 15:55:06 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 15:55:06 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 15:55:06 | INFO     | app.services.admin_agent | AdminAgent chat completed in 3.61 seconds (tool_used=False)
+2026-08-20 15:55:06 | INFO     | app.http | <<< POST /chat/admin -> 200 (3623.88ms)
+2026-08-20 16:00:44 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:00:44 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:01:22 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:01:22 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:02:19 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:02:19 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:02:55 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:02:55 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:03:24 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:03:24 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:08:36 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 16:08:36 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 16:08:36 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:08:36 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:08:36 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001974B4E4830>
+2026-08-20 16:08:36 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:08:36 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:08:36 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:08:36 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:08:36 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:09:28 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:09:28 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:09:28 | INFO     | app.services.admin_agent | AdminAgent chat completed in 51.49 seconds (tool_used=False)
+2026-08-20 16:09:28 | INFO     | app.http | <<< POST /chat/admin -> 200 (51511.42ms)
+2026-08-20 16:09:28 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 16:09:28 | INFO     | app.services.sql_query_service | SQL query executed in 115.12ms — 1 rows returned
+2026-08-20 16:09:28 | INFO     | app.http | <<< POST /sql/query -> 200 (123.32ms)
+2026-08-20 16:09:28 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 16:09:28 | INFO     | app.services.admin_agent | AdminAgent spawned background task: 4a4eaa1a4935 (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 16:09:28 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:09:28 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:09:28 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (17.34ms)
+2026-08-20 16:09:28 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001974B486AD0>
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:09:28 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:09:52 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:09:52 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:09:52 | INFO     | app.services.admin_agent | AdminAgent async result ready: 4a4eaa1a4935
+2026-08-20 16:09:52 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 16:09:52 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001974B508690>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 15:09:52 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 16:09:52 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:09:52 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:09:52 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 16:17:32 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:17:32 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:21:41 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 16:21:41 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 16:21:41 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:21:41 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:21:41 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000027A95520830>
+2026-08-20 16:21:41 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:21:41 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:21:41 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:21:41 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:21:41 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:22:33 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:22:33 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:22:33 | INFO     | app.services.admin_agent | AdminAgent chat completed in 51.74 seconds (tool_used=False)
+2026-08-20 16:22:33 | INFO     | app.http | <<< POST /chat/admin -> 200 (51764.74ms)
+2026-08-20 16:22:33 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 16:22:33 | INFO     | app.services.sql_query_service | SQL query executed in 126.15ms — 1 rows returned
+2026-08-20 16:22:33 | INFO     | app.http | <<< POST /sql/query -> 200 (133.42ms)
+2026-08-20 16:22:33 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 16:22:33 | INFO     | app.services.admin_agent | AdminAgent spawned background task: 77235240d88e (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 16:22:33 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:22:33 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:22:33 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (15.97ms)
+2026-08-20 16:22:33 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000027A954C6AD0>
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:22:33 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:22:44 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:22:44 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:22:44 | INFO     | app.services.admin_agent | AdminAgent async result ready: 77235240d88e
+2026-08-20 16:22:44 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 16:22:44 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000027A95548690>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 15:22:44 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 16:22:44 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:22:44 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:22:44 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 16:23:03 | INFO     | root | Logging initialized -> console + logs/app-2026-08-20.log
+2026-08-20 16:23:03 | INFO     | app | AI Ecommerce service started
+2026-08-20 16:25:02 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 16:25:02 | INFO     | app.services.sql_query_service | SQL EXECUTING: SELECT name, stock_quantity FROM products WHERE stock_quantity < 10
+2026-08-20 16:25:02 | INFO     | app.services.sql_query_service | SQL RESULT: 1 rows in 19.50ms | SELECT name, stock_quantity FROM products WHERE stock_quantity < 10
+2026-08-20 16:25:02 | INFO     | app.http | <<< POST /sql/query -> 200 (28.42ms)
+2026-08-20 16:28:58 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 16:28:58 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 16:28:58 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:28:58 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:28:58 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF37FB8C0>
+2026-08-20 16:28:58 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:28:58 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:28:58 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:28:58 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:28:58 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:29:40 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:29:40 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:29:40 | INFO     | app.services.admin_agent | AdminAgent chat completed in 42.19 seconds (tool_used=False)
+2026-08-20 16:29:40 | INFO     | app.http | <<< POST /chat/admin -> 200 (42206.58ms)
+2026-08-20 16:29:40 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 16:29:40 | INFO     | app.services.sql_query_service | SQL EXECUTING: SELECT COUNT(*) as total FROM users WHERE role = 'customer'
+2026-08-20 16:29:40 | INFO     | app.services.sql_query_service | SQL RESULT: 1 rows in 2.44ms | SELECT COUNT(*) as total FROM users WHERE role = 'customer'
+2026-08-20 16:29:40 | INFO     | app.http | <<< POST /sql/query -> 200 (4.2ms)
+2026-08-20 16:29:40 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 16:29:40 | INFO     | app.services.admin_agent | AdminAgent spawned background task: 8934cf5147e0 (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 16:29:40 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:29:40 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:29:40 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (19.36ms)
+2026-08-20 16:29:40 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3827750>
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:29:40 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:29:46 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:29:46 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:29:46 | INFO     | app.services.admin_agent | AdminAgent async result ready: 8934cf5147e0
+2026-08-20 16:29:46 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 16:29:46 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38B0690>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 15:29:46 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 16:29:46 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:29:46 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:29:46 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 16:30:09 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 16:30:09 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 16:30:09 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:30:09 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:30:09 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38036F0>
+2026-08-20 16:30:09 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:30:09 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:30:09 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:30:09 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:30:09 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:30:17 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:30:17 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:30:17 | INFO     | app.services.admin_agent | AdminAgent chat completed in 7.85 seconds (tool_used=False)
+2026-08-20 16:30:17 | INFO     | app.http | <<< POST /chat/admin -> 200 (7869.11ms)
+2026-08-20 16:30:17 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 16:30:17 | INFO     | app.services.admin_agent | AdminAgent spawned background task: 69e0d53c0216 (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 16:30:17 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:30:17 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:30:17 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (19.31ms)
+2026-08-20 16:30:17 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3801E00>
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:30:17 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:30:29 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:30:29 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:30:29 | INFO     | app.services.admin_agent | AdminAgent async result ready: 69e0d53c0216
+2026-08-20 16:30:29 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 16:30:29 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3899910>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 15:30:29 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 16:30:29 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:30:29 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:30:29 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 16:31:11 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 16:31:11 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 16:31:11 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:31:11 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:31:12 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38B8AF0>
+2026-08-20 16:31:12 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:31:12 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:31:12 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:31:12 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:31:12 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:31:18 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:31:18 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:31:18 | INFO     | app.services.admin_agent | AdminAgent chat completed in 6.11 seconds (tool_used=False)
+2026-08-20 16:31:18 | INFO     | app.http | <<< POST /chat/admin -> 200 (6116.98ms)
+2026-08-20 16:31:18 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 16:31:18 | INFO     | app.services.admin_agent | AdminAgent spawned background task: fdfa53232ada (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 16:31:18 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:31:18 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:31:18 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (16.61ms)
+2026-08-20 16:31:18 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF383AAD0>
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:31:18 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:31:26 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:31:26 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:31:26 | INFO     | app.services.admin_agent | AdminAgent async result ready: fdfa53232ada
+2026-08-20 16:31:26 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 16:31:26 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3892050>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 15:31:26 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 16:31:26 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:31:26 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:31:26 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 16:32:32 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 16:32:32 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 16:32:32 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:32:32 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:32:32 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38D4750>
+2026-08-20 16:32:32 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:32:32 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:32:32 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:32:32 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:32:32 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:32:36 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:32:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:32:36 | INFO     | app.services.admin_agent | AdminAgent chat completed in 4.24 seconds (tool_used=False)
+2026-08-20 16:32:36 | INFO     | app.http | <<< POST /chat/admin -> 200 (4250.46ms)
+2026-08-20 16:32:36 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 16:32:36 | INFO     | app.services.admin_agent | AdminAgent spawned background task: 2393766bec17 (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 16:32:36 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 16:32:36 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 16:32:36 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (16.37ms)
+2026-08-20 16:32:36 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38A6300>
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:32:36 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 15:32:41 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 16:32:41 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:32:41 | INFO     | app.services.admin_agent | AdminAgent async result ready: 2393766bec17
+2026-08-20 16:32:41 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 16:32:41 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38DB200>
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 16:32:41 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 16:32:42 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 15:32:42 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 16:32:42 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 16:32:42 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 16:32:42 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 16:32:42 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 16:32:42 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 16:32:42 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 17:09:06 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 17:09:06 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 17:09:06 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:09:06 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:09:06 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38DF5B0>
+2026-08-20 17:09:06 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:09:06 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:09:06 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:09:06 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:09:06 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:09:43 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:09:43 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:09:43 | INFO     | app.services.admin_agent | AdminAgent chat completed in 37.14 seconds (tool_used=False)
+2026-08-20 17:09:43 | INFO     | app.http | <<< POST /chat/admin -> 200 (37153.54ms)
+2026-08-20 17:09:43 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 17:09:43 | INFO     | app.services.sql_query_service | SQL EXECUTING: SELECT COUNT(*) as total FROM users WHERE role = 'customer'
+2026-08-20 17:09:43 | INFO     | app.services.sql_query_service | SQL RESULT: 1 rows in 1.94ms | SELECT COUNT(*) as total FROM users WHERE role = 'customer'
+2026-08-20 17:09:43 | INFO     | app.http | <<< POST /sql/query -> 200 (3.65ms)
+2026-08-20 17:09:43 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 17:09:43 | INFO     | app.services.admin_agent | AdminAgent spawned background task: 24031fae4b4d (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 17:09:43 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:09:43 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:09:43 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (28.64ms)
+2026-08-20 17:09:43 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38DE350>
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:09:43 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:09:49 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:09:49 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:09:49 | INFO     | app.services.admin_agent | AdminAgent async result ready: 24031fae4b4d
+2026-08-20 17:09:49 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 17:09:49 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF382EA90>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 16:09:49 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 17:09:49 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:09:49 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:09:49 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 17:16:36 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 17:16:36 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 17:16:36 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:16:36 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:16:36 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3811C10>
+2026-08-20 17:16:36 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:16:36 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:16:36 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:16:36 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:16:36 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:17:13 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:17:13 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:17:13 | INFO     | app.services.admin_agent | AdminAgent chat completed in 37.05 seconds (tool_used=False)
+2026-08-20 17:17:13 | INFO     | app.http | <<< POST /chat/admin -> 200 (37065.8ms)
+2026-08-20 17:17:13 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 17:17:13 | INFO     | app.services.sql_query_service | SQL EXECUTING: SELECT COUNT(*) as total FROM orders WHERE status = 'cancelled'
+2026-08-20 17:17:13 | INFO     | app.services.sql_query_service | SQL RESULT: 1 rows in 2.69ms | SELECT COUNT(*) as total FROM orders WHERE status = 'cancelled'
+2026-08-20 17:17:13 | INFO     | app.http | <<< POST /sql/query -> 200 (4.37ms)
+2026-08-20 17:17:13 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 17:17:13 | INFO     | app.services.admin_agent | AdminAgent spawned background task: be121c81048e (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 17:17:13 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:17:13 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:17:13 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (16.38ms)
+2026-08-20 17:17:13 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3812750>
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:17:13 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:17:23 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:17:23 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:17:23 | INFO     | app.services.admin_agent | AdminAgent async result ready: be121c81048e
+2026-08-20 17:17:23 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 17:17:23 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF386F120>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 16:17:23 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 17:17:23 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:17:23 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:17:23 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 17:51:35 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 17:51:35 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 17:51:35 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:51:35 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:51:35 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38D07E0>
+2026-08-20 17:51:35 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:51:35 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:51:35 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:51:35 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:51:35 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:52:18 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:52:18 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:52:18 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:52:18 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:52:18 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:52:18 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:52:18 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:52:18 | INFO     | app.services.admin_agent | AdminAgent chat completed in 43.75 seconds (tool_used=False)
+2026-08-20 17:52:18 | INFO     | app.http | <<< POST /chat/admin -> 200 (43762.56ms)
+2026-08-20 17:52:18 | INFO     | app.http | >>> POST /sql/query from 127.0.0.1
+2026-08-20 17:52:18 | WARNING  | app.services.sql_query_service | SQL query failed after 0.03ms: Only a single SQL statement is allowed.
+2026-08-20 17:52:18 | INFO     | app.http | <<< POST /sql/query -> 200 (3.17ms)
+2026-08-20 17:52:18 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 17:52:18 | INFO     | app.services.admin_agent | AdminAgent spawned background task: ccd08e4cb691 (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 17:52:18 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:52:18 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:52:18 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (15.47ms)
+2026-08-20 17:52:19 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3884690>
+2026-08-20 17:52:19 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:52:19 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:52:19 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:52:19 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:52:19 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:52:28 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:52:28 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:52:28 | INFO     | app.services.admin_agent | AdminAgent async result ready: ccd08e4cb691
+2026-08-20 17:52:28 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 17:52:28 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF3886D50>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 16:52:28 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 17:52:28 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:52:28 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:52:28 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200
+2026-08-20 17:57:16 | INFO     | app.http | >>> POST /chat/admin from 127.0.0.1
+2026-08-20 17:57:16 | INFO     | app.services.admin_agent | AdminAgent processing chat request
+2026-08-20 17:57:16 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:57:16 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:57:16 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF383E330>
+2026-08-20 17:57:16 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:57:16 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:57:16 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:57:16 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:57:16 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:57:25 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:57:25 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:57:25 | INFO     | app.services.admin_agent | AdminAgent chat completed in 9.33 seconds (tool_used=False)
+2026-08-20 17:57:25 | INFO     | app.http | <<< POST /chat/admin -> 200 (9343.31ms)
+2026-08-20 17:57:25 | INFO     | app.http | >>> POST /chat/admin/async from 127.0.0.1
+2026-08-20 17:57:25 | INFO     | app.services.admin_agent | AdminAgent spawned background task: a6f0094dc294 (callback: http://127.0.0.1:8000/api/ai/chat/callback)
+2026-08-20 17:57:25 | INFO     | app.providers.OllamaLLMProvider | Generating response using model 'mistral'
+2026-08-20 17:57:25 | DEBUG    | httpcore.connection | connect_tcp.started host='localhost' port=11434 local_address=None timeout=120.0 socket_options=None
+2026-08-20 17:57:25 | INFO     | app.http | <<< POST /chat/admin/async -> 200 (17.0ms)
+2026-08-20 17:57:25 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38C27D0>
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:57:25 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 20 Aug 2026 16:57:34 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-08-20 17:57:34 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:57:34 | INFO     | app.services.admin_agent | AdminAgent async result ready: a6f0094dc294
+2026-08-20 17:57:34 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=8000 local_address=None timeout=30 socket_options=None
+2026-08-20 17:57:34 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000019AF38C3550>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Host', b'127.0.0.1:8000'), (b'Connection', b'close'), (b'X-Powered-By', b'PHP/8.2.12'), (b'Cache-Control', b'no-cache, private'), (b'Date', b'Thu, 20 Aug 2026 16:57:34 GMT'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-20 17:57:34 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:8000/api/ai/chat/callback "HTTP/1.1 200 OK"
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | response_closed.started
+2026-08-20 17:57:34 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-08-20 17:57:34 | INFO     | app.services.admin_agent | Callback sent to http://127.0.0.1:8000/api/ai/chat/callback — status 200

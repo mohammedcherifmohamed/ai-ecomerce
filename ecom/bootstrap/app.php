@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AddCorrelationId;
 use App\Http\Middleware\EnsureUserHasRole;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -16,7 +17,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'role' => EnsureUserHasRole::class,
             'auth.ai' => \App\Http\Middleware\VerifyAiApiKey::class,
+            'correlation' => AddCorrelationId::class,
         ]);
+        
+        // Apply correlation ID middleware globally
+        $middleware->prepend(AddCorrelationId::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -23,7 +23,7 @@ jobs:
       
       - name: Build assets (npm)
         run: |
-          cd ./ecom  # ⚠️ Remove this line if your project is in the root
+          cd ./ecom  
           npm install
           npm run build
       
@@ -35,7 +35,7 @@ jobs:
       
       - name: Install PHP dependencies
         run: |
-          cd ./ecom  # ⚠️ Remove this line if your project is in the root
+          cd ./ecom  
           composer install --no-dev --optimize-autoloader --no-progress --no-interaction
       
       - name: Deploy via FTP
@@ -44,9 +44,9 @@ jobs:
           server: ${{ secrets.GOLD_LINE_FTP_SERVER }}
           username: ${{ secrets.GOLD_LINE_FTP_USERNAME }}
           password: ${{ secrets.GOLD_LINE_FTP_PASSWORD }}
-          local-dir: ./ecom/  # ⚠️ Remove './ecom/' if your project is in the root
-          server-dir: /home/segnwyff/ecom/  # ⚠️ Change to your cPanel directory
-          dangerous-clean-slate: false  # Set to true to delete remote files not in local
+          local-dir: ./ecom/ 
+          server-dir: /home/segnwyff/ecom/ 
+          dangerous-clean-slate: false 
           exclude: |
             .env
             .git/

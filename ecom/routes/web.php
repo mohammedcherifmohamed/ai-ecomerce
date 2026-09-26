@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AiChatController as AdminAiChatController;
+use App\Http\Controllers\Admin\Analysis\AiMiniCpmWebController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
@@ -66,6 +67,12 @@ Route::middleware('auth')->group(function () {
         Route::get('ai/chat', [AdminAiChatController::class, 'index'])->name('ai.chat');
         Route::post('ai/chat', [AdminAiChatController::class, 'ask'])->name('ai.chat.ask');
         Route::get('ai/chat/result/{requestId}', [AdminAiChatController::class, 'result'])->name('ai.chat.result');
+
+        Route::get('ai/query', [AiMiniCpmWebController::class, 'index'])->name('ai.query');
+        Route::post('ai/query', [AiMiniCpmWebController::class, 'submitQuery'])->name('ai.query.submit');
+        Route::get('ai/query/{job}/status', [AiMiniCpmWebController::class, 'getStatus'])->name('ai.query.status');
+        Route::get('ai/query/history', [AiMiniCpmWebController::class, 'history'])->name('ai.query.history');
+
         Route::get('ready-emails', [ReadyEmailController::class, 'index'])->name('ready-emails.index');
         Route::get('ready-emails/{id}/edit', [ReadyEmailController::class, 'edit'])->name('ready-emails.edit');
         Route::put('ready-emails/{id}', [ReadyEmailController::class, 'update'])->name('ready-emails.update');

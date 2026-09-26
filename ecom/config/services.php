@@ -35,8 +35,12 @@ return [
         ],
     ],
     'ai' => [
-        'url' => env('AI_SERVICE_URL', 'http://localhost:8001'),
+        'url' => env('AI_SERVICE_URL', 'http://localhost:5000'),
         'timeout' => env('AI_SERVICE_TIMEOUT', 300),
+        'api_key' => env('AI_SERVICE_API_KEY'),
+        'retry_attempts' => env('AI_SERVICE_RETRY_ATTEMPTS', 3),
+        'retry_delay' => env('AI_SERVICE_RETRY_DELAY', 5),
+        'webhook_secret' => env('WEBHOOK_SECRET'),
     ],
 
 ];

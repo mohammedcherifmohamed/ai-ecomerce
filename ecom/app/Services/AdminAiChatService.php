@@ -133,8 +133,37 @@ class AdminAiChatService
                 dateTo: $toolCall['date_to'] ?? null,
                 category: $toolCall['category'] ?? null,
             ),
+            'sql_query' => $this->callPythonSqlQuery($toolCall['query'] ?? ''),
             default => ['success' => false, 'error' => "Unknown admin tool: {$toolName}"],
         };
+    }
+
+    protected function callPythonSqlQuery(string $query): array
+    {
+        Log::info("Admin AI SQL: executing query", ['query' => $query]);
+
+        $response = Http::timeout(30)
+            ->post("{$this->baseUrl}/sql/query", [
+                'query' => $query,
+            ]);
+
+        if ($response->failed()) {
+            Log::error("Admin AI SQL: Python service unavailable", ['query' => $query]);
+            return ['success' => false, 'error' => 'Python SQL service unavailable.'];
+        }
+
+        $result = $response->json();
+        Log::info("Admin AI SQL: result", [
+            'query' => $query,
+            'columns' => $result['columns'] ?? [],
+            'rows' => $result['rows'] ?? [],
+            'row_count' => $result['row_count'] ?? 0,
+            'success' => $result['success'] ?? false,
+            'error' => $result['error'] ?? null,
+            'execution_time_ms' => $result['execution_time_ms'] ?? 0,
+        ]);
+
+        return $result;
     }
 
     protected function error(string $message): array

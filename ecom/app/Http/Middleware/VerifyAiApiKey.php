@@ -10,13 +10,13 @@ class VerifyAiApiKey
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $expected = config('app.ai_api_key');
+        $expected = config('services.ai.api_key');
 
         if (!$expected) {
             return response()->json(['message' => 'AI API key not configured.'], 500);
         }
 
-        $provided = $request->bearerToken();
+        $provided = $request->header('X-API-Key');
 
         if (!$provided || $provided !== $expected) {
             return response()->json(['message' => 'Unauthorized.'], 401);

@@ -49,12 +49,14 @@ class AdminAnalysisService
                 return ['success' => false, 'error' => 'Customer not found with that email.'];
             }
             $customer = $user->customer;
-        } else {
+        } elseif ($customerId) {
             try {
                 $customer = $this->customerRepository->findById($customerId);
-            } catch (\Exception $e) {
+            } catch (\Exception|\TypeError $e) {
                 return ['success' => false, 'error' => 'Customer not found.'];
             }
+        } else {
+            return ['success' => false, 'error' => 'Provide a customer_id or email.'];
         }
 
         $orders = $customer->orders()->get();

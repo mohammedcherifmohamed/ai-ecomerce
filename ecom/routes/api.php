@@ -3,6 +3,7 @@ use App\Http\Controllers\Api\AI\AdminAnalysisController;
 use App\Http\Controllers\Api\AI\AiChatCallbackController;
 use App\Http\Controllers\Api\AI\AIOrderController ;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Analysis\AiMiniCpmController;
 
 
 Route::prefix('ai')->middleware('auth.ai')->group(function(){
@@ -28,3 +29,18 @@ Route::prefix('ai')->group(function(){
         return 'ok';
     });
 });
+
+
+// routes MiciCpm5
+ Route::get('/miniHealth',function(){
+        return "success";
+});
+
+Route::middleware(['auth:sanctum'])->group(function () {
+   
+    Route::post('/ai/query', [AiMiniCpmController::class, 'submitQuery']);
+    Route::get('/ai/query/{job}/status', [AiMiniCpmController::class, 'getStatus']);
+});
+
+Route::post('/ai/webhook', [AiMiniCpmController::class, 'webhook'])
+    ->name('api.ai.webhook');

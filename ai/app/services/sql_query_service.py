@@ -108,13 +108,15 @@ def execute_sql_query(query: str) -> SqlQueryResponse:
     start = time.perf_counter()
     try:
         validated = validate(query)
+        logger.info("SQL EXECUTING: %s", validated)
         result = execute(validated)
         elapsed = (time.perf_counter() - start) * 1000
 
         logger.info(
-            "SQL query executed in %.2fms — %d rows returned",
-            elapsed,
+            "SQL RESULT: %d rows in %.2fms | %s",
             result["row_count"],
+            elapsed,
+            validated,
         )
 
         return SqlQueryResponse(

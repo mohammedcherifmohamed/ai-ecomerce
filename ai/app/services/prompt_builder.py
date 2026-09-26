@@ -105,6 +105,64 @@ ADMIN_TOOLS_JSON = json.dumps([
     },
 ], indent=2)
 
+DATABASE_SCHEMA = """
+DATABASE SCHEMA (MySQL):
+
+users
+  id BIGINT PK, name VARCHAR, role ENUM('customer','employee','administrator'),
+  email VARCHAR UNIQUE, created_at, updated_at, deleted_at
+
+customers
+  id BIGINT PK, user_id BIGINT FK->users.id, phone VARCHAR, address TEXT,
+  city VARCHAR, state VARCHAR, zip_code VARCHAR, country VARCHAR,
+  deleted_at, created_at, updated_at
+
+employees
+  id BIGINT PK, user_id BIGINT FK->users.id, employee_id VARCHAR UNIQUE,
+  department VARCHAR, position VARCHAR, hire_date DATE,
+  deleted_at, created_at, updated_at
+
+categories
+  id BIGINT PK, name VARCHAR, slug VARCHAR UNIQUE, description TEXT,
+  parent_id BIGINT FK->categories.id (self-ref for subcategories),
+  is_active TINYINT, sort_order INT, created_at, updated_at, deleted_at
+
+products
+  id BIGINT PK, category_id BIGINT FK->categories.id, name VARCHAR,
+  slug VARCHAR UNIQUE, description TEXT, price DECIMAL(10,2),
+  compare_at_price DECIMAL(10,2), sku VARCHAR UNIQUE, stock_quantity INT,
+  low_stock_threshold INT, is_active TINYINT, is_featured TINYINT,
+  weight DECIMAL(8,2), created_at, updated_at, deleted_at
+
+orders
+  id BIGINT PK, order_number VARCHAR UNIQUE, customer_id BIGINT FK->customers.id,
+  subtotal DECIMAL(12,2), tax_amount DECIMAL(10,2), shipping_amount DECIMAL(10,2),
+  discount_amount DECIMAL(12,2), total_amount DECIMAL(12,2),
+  status VARCHAR (pending/processing/shipped/delivered/cancelled),
+  shipping_address TEXT, billing_address TEXT, payment_method VARCHAR,
+  payment_status VARCHAR, notes TEXT, shipped_at, delivered_at,
+  created_at, updated_at, deleted_at
+
+order_items
+  id BIGINT PK, order_id BIGINT FK->orders.id, product_id BIGINT FK->products.id,
+  product_name VARCHAR, product_sku VARCHAR, quantity INT,
+  unit_price DECIMAL(10,2), total_price DECIMAL(12,2),
+  created_at, updated_at
+
+order_status_histories
+  id BIGINT PK, order_id BIGINT FK->orders.id, status VARCHAR,
+  notes TEXT, changed_by BIGINT FK->users.id, created_at, updated_at
+
+inquiry
+  id BIGINT PK, customer_id BIGINT FK->customers.id, category VARCHAR,
+  inquiry TEXT, treated TINYINT, created_at, updated_at
+
+ready_emails
+  id BIGINT PK, inquiry_id BIGINT FK->inquiry.id,
+  customer_id BIGINT FK->customers.id, title VARCHAR, email TEXT,
+  email_sent TINYINT, created_at, updated_at
+"""
+
 ADMIN_PROMPT_TEMPLATE = """
 You are an AI analytics assistant for e-commerce platform administrators.
 Your role is to help admins understand customers, orders, inquiries, and business trends.
@@ -112,6 +170,8 @@ Your role is to help admins understand customers, orders, inquiries, and busines
 You retrieve data using tools. You do NOT search documents.
 
 CRITICAL: You MUST call a tool for EVERY data-related question. Never assume, guess, or make up data. Your knowledge is empty — always fetch data first.
+
+{database_schema}
 
 Available tools (JSON):
 {admin_tools_json}
@@ -121,10 +181,13 @@ TOOL SELECTION GUIDE:
 - "customer_summary" → when admin asks about a specific customer's info, orders, or spending
 - "trends_statistics" → when admin asks about sales trends, revenue, order counts over time
 - "ticket_analysis" → when admin asks for a summary/overview/breakdown of all inquiries (by category, by date, totals)
-- "sql_query" → when admin asks for custom data, specific numbers, or reports that none of the above tools can provide. Use this as a last resort for bespoke database queries.
+- "sql_query" → DEFAULT TOOL for ANY data question not covered by the above 4 tools. Use sql_query for counting, listing, aggregating, joining, or any custom data retrieval. Examples: employee counts, product stock, order totals by status, customer lists, inventory checks, etc.
+
+RULE: If the question is about data in the database and none of the 4 specialized tools above apply, ALWAYS use sql_query. Write a correct SELECT query using the DATABASE SCHEMA.
 
 For general questions like "resume", "summary", "overview of issues" → use ticket_analysis.
 For specific questions like "find inquiries about returns" → use search_inquiries.
+For ANYTHING else about data → use sql_query.
 
 CRITICAL RULES FOR TOOL CALLS:
 
@@ -138,10 +201,16 @@ CRITICAL RULES FOR TOOL CALLS:
    TOOL_CALL:{{"tool":"trends_statistics","period":"monthly","date_from":"2026-01-01","date_to":"2026-06-30"}}
    TOOL_CALL:{{"tool":"ticket_analysis"}}
    TOOL_CALL:{{"tool":"ticket_analysis","category":"complaint"}}
+   TOOL_CALL:{{"tool":"sql_query","query":"SELECT COUNT(*) as total FROM orders WHERE status = 'shipped'"}}
+   TOOL_CALL:{{"tool":"sql_query","query":"SELECT COUNT(*) as total FROM employees"}}
+   TOOL_CALL:{{"tool":"sql_query","query":"SELECT name, price, stock_quantity FROM products ORDER BY stock_quantity ASC LIMIT 10"}}
+   TOOL_CALL:{{"tool":"sql_query","query":"SELECT u.name, c.city, c.phone FROM customers c JOIN users u ON c.user_id = u.id LIMIT 20"}}
 
 2. When you call a tool, your ENTIRE response must be ONLY the TOOL_CALL line.
 
-3. Never invent information. If you cannot call a tool, say you need a tool to answer.
+3. Never invent information. If the question is about database data, ALWAYS use sql_query — never say data is unavailable.
+
+4. When using sql_query, ALWAYS reference the DATABASE SCHEMA above for correct table names, column names, and JOIN conditions. Never guess column names — use exactly as defined in the schema.
 
 You are helpful, concise, and data-driven.
 """
@@ -149,13 +218,22 @@ You are helpful, concise, and data-driven.
 ADMIN_RESULT_PROMPT = """
 You are an AI analytics assistant for e-commerce platform administrators.
 
-A tool was already executed and the result is shown below.
-Use the tool result to answer the admin's question.
+A tool was already executed. The admin's original question is shown below, along with the tool result.
+Answer the admin's question DIRECTLY using ONLY the data from the tool result. Do NOT guess, infer, or make up information.
 
-Format your answer with:
-- Clear bullet points for lists
-- Numbers formatted cleanly
-- A brief summary at the top
+If the tool result is a SQL query result, it has this structure:
+- "columns": list of column names (these are the SELECT aliases or field names)
+- "rows": list of rows, where each row is a list of values matching the columns by position
+- "row_count": total number of rows returned
+
+Example: columns=["total"], rows=[[20]] means the first (and only) column "total" has value 20.
+So if the question was "how many customers" → the answer is 20 customers.
+
+CRITICAL RULES:
+- Match column names to values by their position in the list
+- Do NOT reinterpret "total" as revenue or sales if the question was about counting
+- If the result contains exactly the answer to the question, state it clearly
+- Format numbers cleanly (e.g. 1,234 instead of 1234)
 
 Do NOT call any tools - the result is already available.
 
@@ -226,7 +304,10 @@ Answer:
         if tool_result:
             prompt = ADMIN_RESULT_PROMPT
         else:
-            prompt = ADMIN_PROMPT_TEMPLATE.format(admin_tools_json=ADMIN_TOOLS_JSON)
+            prompt = ADMIN_PROMPT_TEMPLATE.format(
+                database_schema=DATABASE_SCHEMA,
+                admin_tools_json=ADMIN_TOOLS_JSON,
+            )
 
         return f"""
 {prompt}

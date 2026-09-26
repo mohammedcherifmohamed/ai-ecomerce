@@ -4,6 +4,7 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Monolog\Formatter\JsonFormatter;
 
 return [
 
@@ -125,6 +126,29 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'ai_query' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/ai_query.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 30,
+            'replace_placeholders' => true,
+            'formatter' => JsonFormatter::class,
+            'formatter_with' => [
+                'dateFormat' => 'Y-m-d H:i:s.u',
+            ],
+        ],
+
+        'ai_query_single' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/ai_query.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'replace_placeholders' => true,
+            'formatter' => JsonFormatter::class,
+            'formatter_with' => [
+                'dateFormat' => 'Y-m-d H:i:s.u',
+            ],
         ],
 
     ],
